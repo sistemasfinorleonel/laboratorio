@@ -24,7 +24,7 @@ class CreatePacientesTable extends Migration
             $table->integer('edad');
             $table->enum('sexo',['Masculino','Femenino']);
             $table->string('direccion');
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')
                 ->on('users')
                 ->onDelete('cascade')
