@@ -252,6 +252,10 @@ return [
             'icon'        => 'far fa-fw fa-file',
            
         ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
         [
             'text'        => 'laboratorista',
             'url'         => 'admin/laboratoristas',
@@ -263,6 +267,34 @@ return [
             
            
         ],
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+>>>>>>> c0a12f7dd95fa8bed1002c074fbb089fa139da98
+        [
+            'text'        => 'laboratorista',
+            'url'         => 'admin/laboratoristas',
+            
+        ],
+        [
+            'text'        => 'medicos',
+            'url'         => 'admin/medicos',
+            
+           
+        ],
+        ['header' => 'account_settings'],
+>>>>>>> c0a12f7dd95fa8bed1002c074fbb089fa139da98
+        [
+            'text'        => 'Establecimientos',
+            'url'         => 'admin/establecimientos',
+            'icon'        => 'far fa-hospital-o',
+           
+        ],
+
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
