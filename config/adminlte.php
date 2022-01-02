@@ -252,6 +252,17 @@ return [
             'icon'        => 'far fa-fw fa-file',
            
         ],
+        [
+            'text'        => 'laboratorista',
+            'url'         => 'admin/laboratoristas',
+            
+        ],
+        [
+            'text'        => 'medicos',
+            'url'         => 'admin/medicos',
+            
+           
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

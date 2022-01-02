@@ -43,6 +43,8 @@ class PacienteController extends Controller
         $datosPaciente= request()->except('_token');
   
         Paciente::insert($datosPaciente);
+        return redirect()->route('admin.pacientes');
+     
     }
 
     /**
@@ -80,7 +82,7 @@ class PacienteController extends Controller
         
         Paciente::where('id','=',$paciente->id)->update($datospaciente);
         
-        return redirect()->to(route('admin.pacientes.index'));
+        return redirect()->route('admin.pacientes.index');
       
     }
 
@@ -93,7 +95,7 @@ class PacienteController extends Controller
     public function destroy(Paciente $paciente)
     {
         $paciente->delete();
-        return redirect()->to(route('admin.pacientes.index'));
+        return redirect()->route('admin.pacientes.index');
         
     }
 }
