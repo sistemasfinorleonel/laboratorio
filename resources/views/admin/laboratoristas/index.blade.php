@@ -11,10 +11,10 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('pacientes.create')}}">Agregar establecimiento</a>            
+               <a class ="btn btn-primary"href="{{route('laboratoristas.create')}}"> agregar laboratorista</a>            
             </div>
             <div class="card-body">  
-                <table id ="paciente"class= "table table-striped" style="width:100%"> 
+                <table id ="laboratorista"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
@@ -34,25 +34,24 @@ $pcolor = "";
                     </thead>
                     
                     <tbody>
-                        @foreach ($pacientes as $paciente)
+                        @foreach ($laboratoristas as $laboratorista)
                             <tr>
-                                    <td>{{$paciente->id}}</td>
-                                    <td>{{$paciente->ci}}</td>
-                                    <td>{{$paciente->nombre}}</td>
-                                    <td>{{$paciente->paterno}}</td>
-                                    <td>{{$paciente->materno}}</td>
-                                    <td>{{$paciente->fecha_nacimiento}}</td>
-                                    <td>{{$paciente->edad}}</td>
-                                    <td>{{$paciente->sexo}}</td>
-                                    <td>{{$paciente->direccion}}</td>
-                                    <td>{{$paciente->user->name}}</td>
+                                    <td>{{$laboratorista->id}}</td>
+                                    <td>{{$laboratorista->ci}}</td>
+                                    <td>{{$laboratorista->nombre}}</td>
+                                    <td>{{$laboratorista->paterno}}</td>
+                                    <td>{{$laboratorista->materno}}</td>
+                                    <td>{{$laboratorista->fecha_nacimiento}}</td>
+                                    <td>{{$laboratorista->sexo}}</td>
+                                    <td>{{$laboratorista->direccion}}</td>
+                                    <td>{{$laboratorista->user->name}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('pacientes.edit',$paciente)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('laboratoristas.edit',$laboratorista)}}">editar</a>
                                     </td>  
                         
                                     <td >
-                                        <form action="{{route('pacientes.destroy',$paciente)}}" method="post">
+                                        <form action="{{route('laboratoristas.destroy',$laboratorista)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
@@ -86,7 +85,7 @@ $pcolor = "";
 
 <script>
 $(document).ready(function() {
-    $('#paciente').DataTable(
+    $('#laboratorista').DataTable(
         {
 
             responsive:true,

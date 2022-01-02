@@ -252,6 +252,21 @@ return [
             'icon'        => 'far fa-fw fa-file',
            
         ],
+<<<<<<< HEAD
+=======
+        [
+            'text'        => 'laboratorista',
+            'url'         => 'admin/laboratoristas',
+            
+        ],
+        [
+            'text'        => 'medicos',
+            'url'         => 'admin/medicos',
+            
+           
+        ],
+        ['header' => 'account_settings'],
+>>>>>>> c0a12f7dd95fa8bed1002c074fbb089fa139da98
         [
             'text'        => 'Establecimientos',
             'url'         => 'admin/establecimientos',

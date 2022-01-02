@@ -1,6 +1,6 @@
 <div class="form-group">
     {!! Form::label('ci','ci') !!}
-    {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'ingrese  el establecimiento']) !!}
 
 </div>
 <div class="form-group">

@@ -39,15 +39,6 @@
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
-<div class="form-group">
-    {!! Form::label('edad','edad') !!}
-    
-    {!! Form::number('edad',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
-@error('edad')
-<span class="text-danger">{{$message}}</span>
-@enderror
-</div>
-
 
 
 <div class="form-group">
@@ -70,12 +61,14 @@
 @enderror
 </div>
 
+
 </div>
 <div class="form-group">
     {!! Form::label('user_id',' user_id') !!}
     <select name="user_id" id="user_id">
         <option value="{{isset($paciente->user->email)?$paciente->user->email:""}}">{{isset($paciente->user->email)?$paciente->user->email:""}}</option>
-           @foreach ($users as $user)
+     
+        @foreach ($users as $user)
             <option value="{{$user->id}}">{{$user->email}}</option>
         @endforeach
     </select>
