@@ -41,7 +41,7 @@ class LaboratoristaController extends Controller
     {
         $datosPaciente= request()->except('_token');
         Laboratorista::insert($datosPaciente);
-        return redirect()->route('admin.laboratoristas.index');
+        return redirect()->route('laboratoristas.index');
      
     
     }
@@ -80,7 +80,7 @@ class LaboratoristaController extends Controller
     {
         $datoslaboratorista= request()->except(['_token','_method']);
         Laboratorista::where('id','=',$laboratorista->id)->update($datoslaboratorista);
-        return redirect()->route('admin.laboratoristas.index');
+        return redirect()->route('laboratoristas.index');
      
     }
 
@@ -93,7 +93,7 @@ class LaboratoristaController extends Controller
     public function destroy(Laboratorista $laboratorista)
     {
         $laboratorista->delete();
-        return redirect()->route('admin.laboratoristas.index');
+        return redirect()->route('laboratoristas.index');
         
     }
 }

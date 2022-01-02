@@ -42,7 +42,7 @@ class MedicoController extends Controller
     {     $datosMedico= request()->except('_token');
   
         Medico::insert($datosMedico);
-        return redirect()->route('admin.medicos.index');
+        return redirect()->route('medicos.index');
     }
 
     /**
@@ -79,7 +79,7 @@ class MedicoController extends Controller
     public function update(Request $request, Medico $medico)
     {   $datosmedicos= request()->except(['_token','_method']);
         medico::where('id','=',$medico->id)->update($datosmedicos);
-        return redirect()->route('admin.medicos.index');
+        return redirect()->route('medicos.index');
      
     }
 
@@ -92,7 +92,7 @@ class MedicoController extends Controller
     public function destroy(Medico $medico)
     {
         $medico->delete();
-        return redirect()->route('admin.medicos.index');
+        return redirect()->route('medicos.index');
         
     }
 }
