@@ -70,12 +70,12 @@
 @enderror
 </div>
 
-
 </div>
 <div class="form-group">
     {!! Form::label('user_id',' user_id') !!}
     <select name="user_id" id="user_id">
-        @foreach ($users as $user)
+        <option value="{{isset($paciente->user->email)?$paciente->user->email:""}}">{{isset($paciente->user->email)?$paciente->user->email:""}}</option>
+           @foreach ($users as $user)
             <option value="{{$user->id}}">{{$user->email}}</option>
         @endforeach
     </select>
