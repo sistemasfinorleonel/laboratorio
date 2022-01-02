@@ -286,7 +286,7 @@ return [
         [
             'text'        => 'Establecimientos',
             'url'         => 'admin/establecimientos',
-            'icon'        => 'far fa-hospital-o',
+            'icon'        => 'far fa-home',
            
         ],
 
