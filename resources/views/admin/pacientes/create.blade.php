@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="card">
-     <div class="card-body">
+     <div class="card-body">    
         {!! Form::open(['route' => 'pacientes.store']) !!}
          @include('admin.pacientes.form')
             

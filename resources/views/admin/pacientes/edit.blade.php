@@ -8,14 +8,15 @@
 <div class="card">
     <div class="card-body">
       
-        {!! Form::model($prenda,['route' => ['prendas.update',$prenda],'method'=>'put']) !!}
+        {!! Form::model($paciente,['route' => ['pacientes.update',$paciente],'method'=>'put']) !!}
         
-        @include('prendas.partials.form')
+        @include('admin.pacientes.form')
         
-            {!! Form::submit('actualizar tipo de prendas', ['class'=>'btn btn-primary'])  !!}
+            {!! Form::submit('actualizar tipo de pacientes', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     
         
       
     </div>
+</div> 
 @stop

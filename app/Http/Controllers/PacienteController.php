@@ -42,11 +42,6 @@ class PacienteController extends Controller
     {
         $datosPaciente= request()->except('_token');
   
-    /* $users = User::select("*")
-                        ->where("email","$request->email")
-                        ->first(); */
-     
-      
         Paciente::insert($datosPaciente);
     }
 
@@ -68,8 +63,8 @@ class PacienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Paciente $paciente)
-    {
-        //
+    { $users=User::all();
+      return view('admin.pacientes.edit',compact('users'),compact('paciente'));
     }
 
     /**
@@ -81,7 +76,12 @@ class PacienteController extends Controller
      */
     public function update(Request $request, Paciente $paciente)
     {
-        //
+        $datospaciente= request()->except(['_token','_method']);
+        
+        Paciente::where('id','=',$paciente->id)->update($datospaciente);
+        
+        return redirect()->to(route('admin.pacientes.index'));
+      
     }
 
     /**
@@ -92,6 +92,8 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        //
+        $paciente->delete();
+        return redirect()->to(route('admin.pacientes.index'));
+        
     }
 }
