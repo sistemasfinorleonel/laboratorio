@@ -55,15 +55,3 @@
         <span class="text-danger">{{$message}}</span>
         @enderror
 </div>
-
-<div class="form-group">
-    {!! Form::label('user_id',' user_id') !!}
-    <select name="user_id" id="user_id">
-        @foreach ($users as $user)
-            <option value="{{$user->id}}">{{$user->email}}</option>
-        @endforeach
-    </select>
-        @error('email')
-        <span class="text-danger">{{$message}}</span>
-        @enderror
-</div>

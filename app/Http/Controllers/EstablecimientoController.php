@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Establecimiento;
+use App\Models\Municipio;
+use App\Models\Red;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,14 +14,15 @@ class EstablecimientoController extends Controller
     
     public function index()
     {
-        $establecimiento = Establecimiento::paginate(15);
-        return view('admin.establecimientos.index',compact('establecimiento'));
+        $establecimientos = Establecimiento::paginate(15);
+    return view('admin.establecimientos.index',compact('establecimientos'));
     }
 
    
     public function create()
-    { $users=User::all();
-        return view('admin.establecimientos.create',compact('users'));
+    { $redes=Red::all();
+      $municipios=Municipio::all();
+        return view('admin.establecimientos.create',compact('redes'),compact('municipios'));
     }
 
   

@@ -1,4 +1,3 @@
-
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -46,7 +45,7 @@ $pcolor = "";
                                     </td>  
                         
                                     <td >
-                                        <form action="{{route('establecimientos.destroy',$establecimienot)}}" method="post">
+                                        <form action="{{route('establecimientos.destroy',$establecimiento)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
@@ -104,4 +103,5 @@ $(document).ready(function() {
 </script>
     
 @endsection
-@stop
+@stop 
+
