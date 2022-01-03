@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Establecimiento;
+use App\Models\Medico;
 use Illuminate\Database\Seeder;
 use App\Models\OrdenLaboratorio;
+use App\Models\Paciente;
 
 class OrdenLaboratorioSeeder extends Seeder
 {
@@ -14,8 +17,8 @@ class OrdenLaboratorioSeeder extends Seeder
      */
     public function run()
     {
-            OrdenLaboratorio::Create(['fecha'=>'12/20/2021','total'=>'22','paciente_id'=>'1','establecimiento_id'=>'2752','medico_id'=>'1']);
-            OrdenLaboratorio::Create(['fecha'=>'12/21/2021','total'=>'20','paciente_id'=>'1','establecimiento_id'=>'2753','medico_id'=>'1']);
+            OrdenLaboratorio::Create(['fecha'=>'2021/12/03','total'=>22,'paciente_id'=>1,'establecimiento_id'=>1,'medico_id'=>1]);
+ /*            OrdenLaboratorio::Create(['fecha'=>'12/21/2021','total'=>'20','paciente_id'=>'1','establecimiento_id'=>'2753','medico_id'=>'1']);
             OrdenLaboratorio::Create(['fecha'=>'12/22/2021','total'=>'22','paciente_id'=>'1','establecimiento_id'=>'2754','medico_id'=>'1']);
             OrdenLaboratorio::Create(['fecha'=>'12/23/2021','total'=>'20','paciente_id'=>'1','establecimiento_id'=>'2755','medico_id'=>'1']);
             OrdenLaboratorio::Create(['fecha'=>'12/24/2021','total'=>'22','paciente_id'=>'2','establecimiento_id'=>'2756','medico_id'=>'1']);
@@ -34,5 +37,5 @@ class OrdenLaboratorioSeeder extends Seeder
             OrdenLaboratorio::Create(['fecha'=>'1/3/2022','total'=>'20','paciente_id'=>'4','establecimiento_id'=>'2757','medico_id'=>'3']);
             OrdenLaboratorio::Create(['fecha'=>'1/3/2022','total'=>'20','paciente_id'=>'4','establecimiento_id'=>'2757','medico_id'=>'3']);
 
-    }
+ */    }
 }

@@ -13,4 +13,7 @@ class Paciente extends Model
 {
   return $this->belongsTo('App\Models\User');
 }
+public function orden_laboratorios(){
+  return $this->hasMany('App\Models\OrdenLaboratorio');
+}
 }

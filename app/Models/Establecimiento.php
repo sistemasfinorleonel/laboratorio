@@ -17,4 +17,7 @@ class Establecimiento extends Model
     public function red(){
         return $this->hasMany('App\Models\Red');
     }
+    public function orden_laboratorios(){
+        return $this->hasMany('App\Models\OrdenLaboratorio');
+    }
 }
