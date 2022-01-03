@@ -20,6 +20,8 @@ Route::resource('examens', ExamenController::class)->names('examens');
 
 Route::resource('establecimientos', EstablecimientoController::class)->names('establecimientos');
 Route::resource('servicios', ServicioController::class)->names('servicios');
+Route::resource('ordens', OrdenLaboratorioController::class)->names('ordens');
+
 Route::get('ordens',[ OrdenLaboratorioController::class,'index'])->name('ordens');
 
 //Route::get('establecimientos',[ EstablecimientoController::class,'index'])->name('establecimientos');
