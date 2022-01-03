@@ -262,14 +262,14 @@ return [
         [
             'text'        => 'Médicos',
             'url'         => 'admin/medicos',
-            'icon'        => 'fas fa-fw fa-user',
+            'icon'        => 'fas fa-user-md',
             
            
         ],
         [
             'text'        => 'Establecimientos',
             'url'         => 'admin/establecimientos',
-            'icon'        => 'fas fa-fw fa-list',
+            'icon'        => 'fas fa-clinic-medical',
            
         ],
 
