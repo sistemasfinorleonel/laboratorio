@@ -12,4 +12,8 @@ class Medico extends Model
     {
       return $this->belongsTo('App\Models\User');
     }
-}
+    public function orden_laboratorio()
+    {
+        return $this->hasMany('App\Models\OrdenLaboratorio');
+    }
+  }

@@ -10,47 +10,45 @@
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('laboratoristas.create')}}"> agregar laboratorista</a>            
+               <a class ="btn btn-primary"href="{{route('examens.create')}}"> agregar examen</a>            
             </div>
             <div class="card-body">  
-                <table id ="laboratorista"class= "table table-striped" style="width:100%"> 
+                <table id ="examen"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
                             <th>id</th>
-                            <th>ci</th>
+                         
                             <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>            
-                            <th>fechaNacimiento</th>         
-                            <th>edad</th>
-                            <th>sexo</th>     
-                            <th>direccion</th>   
-                            <th>usuario</th>   
+                            <th>edad ini</th>            
+                            <th>edad fin</th>            
+                            <th>sexo</th>         
+                            <th>unidad medida</th>
+                            <th>rango ini</th>     
+                            <th>rango fin</th>   
                             <th ></th>
                             <th ></th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                        @foreach ($laboratoristas as $laboratorista)
+                        @foreach ($examens as $examen)
                             <tr>
-                                    <td>{{$laboratorista->id}}</td>
-                                    <td>{{$laboratorista->ci}}</td>
-                                    <td>{{$laboratorista->nombre}}</td>
-                                    <td>{{$laboratorista->paterno}}</td>
-                                    <td>{{$laboratorista->materno}}</td>
-                                    <td>{{$laboratorista->fecha_nacimiento}}</td>
-                                    <td>{{$laboratorista->sexo}}</td>
-                                    <td>{{$laboratorista->direccion}}</td>
-                                    <td>{{$laboratorista->user->name}}</td>
-                                    
+                                    <td>{{$examen->id}}</td>   
+                                    <td>{{$examen->nombre}}</td>
+                                    <td>{{$examen->referencia->edad_ini}}</td>
+                                    <td>{{$examen->referencia->edad_fin}}</td>
+                                    <td>{{$examen->referencia->sexo}}</td>
+                                    <td>{{$examen->referencia->unidad_medida}}</td>
+                                    <td>{{$examen->referencia->rango_ini}}</td>
+                                    <td>{{$examen->referencia->rango_fin}}</td>
+                                   
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('laboratoristas.edit',$laboratorista)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('examens.edit',$examen)}}">editar</a>
                                     </td>  
                         
                                     <td >
-                                        <form action="{{route('laboratoristas.destroy',$laboratorista)}}" method="post">
+                                        <form action="{{route('examens.destroy',$examen)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
@@ -84,7 +82,7 @@
 
 <script>
 $(document).ready(function() {
-    $('#laboratorista').DataTable(
+    $('#examen').DataTable(
         {
 
             responsive:true,

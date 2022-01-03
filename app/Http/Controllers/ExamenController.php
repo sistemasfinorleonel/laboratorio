@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Examen;
+use App\Models\Referencia;
 use Illuminate\Http\Request;
+use League\CommonMark\Reference\Reference;
 
 class ExamenController extends Controller
 {
@@ -14,7 +16,9 @@ class ExamenController extends Controller
      */
     public function index()
     {
-        //
+        $examens=Examen::all();
+    
+        return view('admin.examens.index',compact('examens'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ExamenController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.examens.create');  
     }
 
     /**
@@ -34,9 +38,27 @@ class ExamenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
+    {   $referencia=new Referencia;
+        $examen=new Examen;
+  Referencia::Create([     
+ 'edad_ini'=> $request->edad_ini,
+ 'edad_fin'=> $request->edad_fin,
+ 'sexo'=> $request->sexo,
+ 'unidad_medida'=> $request->unidad_medida,
+ 'rango_ini'=> $request->rango_ini,
+ 'rango_fin'=> $request->rango_fin,
+]);
+  
+ $examen['nombre']=$request->nombre;
+ $examen['referencia_id']=Referencia::latest()->first()->id;   
+ $examen['servicio_id']=Referencia::latest()->first()->id;   
+ Examen::create([
+'nombre'=>$request->nombre,
+    'referencia_id'=>Referencia::latest()->first()->id,   
+    'servicio_id'=>Referencia::latest()->first()->id, 
+ ]);
+ redirect()->route('examens.index');
+}
 
     /**
      * Display the specified resource.

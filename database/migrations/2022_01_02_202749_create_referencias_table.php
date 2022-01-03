@@ -18,7 +18,7 @@ class CreateReferenciasTable extends Migration
             $table->integer('edad_ini');
             $table->integer('edad_fin');
             $table->enum('sexo',['Masculino','Femenino']);
-            $table->float('unidad_medida');
+            $table->string('unidad_medida');
             $table->float('rango_ini');
             $table->float('rango_fin');
             $table->timestamps();
