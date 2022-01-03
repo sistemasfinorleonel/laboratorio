@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Establecimiento;
+use App\Models\Municipio;
 use App\Models\OrdenLaboratorio;
+use App\Models\Red;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 
@@ -14,9 +17,11 @@ class OrdenLaboratorioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
+    {  $reds = Red::all();
+        $municipios=Municipio::all();
+        $establecimientos = Establecimiento::all();
         $servicios=Servicio::all();
-       return view('admin.ordens.orden',compact('servicios'));
+       return view('admin.ordens.orden',compact('servicios','municipios','establecimientos','reds'));
     }
 
     /**

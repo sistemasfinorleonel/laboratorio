@@ -13,7 +13,7 @@ class EstablecimientoController extends Controller
 {
     
     public function index()
-    {
+    {   
         $establecimientos = Establecimiento::paginate(15);
     return view('admin.establecimientos.index',compact('establecimientos'));
     }

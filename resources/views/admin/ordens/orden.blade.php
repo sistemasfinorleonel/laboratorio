@@ -19,66 +19,81 @@
 
 <div  class="container py-4">
 
-.<div class="card">
+<div class="card">
     <div class="card-header text-center">
-    SOLICITUD DE  EXAMEN DE
-    <br>
-     LABORATORIO ,IMAGENOLOGIA/GABINETE 
-    <br>
-        O SERVICIOs DE SANGRE
+        SOLICITUD DE  EXAMEN DE
+        <br>
+        LABORATORIO ,IMAGENOLOGIA/GABINETE 
+        <br>
+            O SERVICIOs DE SANGRE
     </div>
     <form class="form-inline" action="" method="post">
          
             <div class="form-group">
-            <label for="pw">Red</label>
-            <input type="text" name="" id=""class="form-control"size="55">
-            
-            <label for="">Municipio</label>
-            <input type="text" name="" id=""class="form-control" size="55">
+                <label for="pw">Red</label>
+                <select name="red_id" id="red_id">
+                    @foreach ($reds as $red)
+                        <option value="{{$red->id}}">{{$red->nombre}}</option>
+                    @endforeach
+                </select> 
+            </div>
+            <div class="form-group">
+                <label for="">Municipio</label>
+                <select name="municipio_id" id="municipio_id">
+                    @foreach ($municipios as $municipio)
+                        <option value="{{$municipio->id}}">{{$municipio->nombre}}</option>
+                    @endforeach
+                </select> 
             </div> 
             <div class="text-center "><label for=""size="10">D-8</label></div>
             
-           <div class="form-group">
+            <div class="form-group">
+                <label for="">Establecimiento</label>
+                <select name="red_id" id="red_id">
+                    @foreach ($establecimientos as $establecimiento)
+                        <option value="{{$establecimiento->id}}">{{$establecimiento->nombre}}</option>
+                    @endforeach
+                </select> 
+            </div> 
+
+            <div class="form-group">
                
-            <label for="">Establecimiento</label>
-            <input type="text" name="" id="" class="form-control"size="120">
-           </div> 
-           <div class="form-group">
+                <label for="">fecha solicitud</label>
+                <input type="date" name="" id="" class="form-control">
+            </div> 
+
+            <div class="form-group">
                
-            <label for="">fecha solicitud</label>
-            <input type="date" name="" id="" class="form-control">
-           </div> 
-           <div class="form-group">
+                <label for="">Nro Registro</label>
+                <input type="text" name="" id="" class="form-control"size="40">
+            </div> 
+
+            <div class="form-group">
                
-            <label for="">Nro Registro</label>
-            <input type="text" name="" id="" class="form-control"size="40">
-           </div> 
-           <div class="form-group">
+                <label for="">Edad</label>
+                <input type="text" name="" id="" class="form-control"size="12">
+            </div> 
+            <div class="form-group">
                
-            <label for="">Edad</label>
-            <input type="text" name="" id="" class="form-control"size="12">
-           </div> 
-           <div class="form-group">
-               
-            <label for="">Sexo</label>
-            <input type="text" name="" id="" class="form-control"size="12">
-           </div> 
+                <label for="">Sexo</label>
+                <input type="text" name="" id="" class="form-control"size="12">
+            </div> 
             
-           <div class="form-group">
+            <div class="form-group">   
+                <label for="">Nombres</label>
+                <input type="text" name="" id="" class="form-control"size="70">
+            </div> 
+
+            <div class="form-group">
+                
+                <label for="">Celula Identidad</label>
+                <input type="text" name="" id="" class="form-control"size="40">
+            </div> 
+            <div class="form-group">
                
-            <label for="">Nombres</label>
-            <input type="text" name="" id="" class="form-control"size="70">
-           </div> 
-           <div class="form-group">
-               
-            <label for="">Celula Identidad</label>
-            <input type="text" name="" id="" class="form-control"size="40">
-           </div> 
-           <div class="form-group">
-               
-            <label for="">Diagnostico clinico</label>
-            <input type="text" name="" id="" class="form-control"size="125">
-           </div> 
+                <label for="">Diagnostico clinico</label>
+                <input type="text" name="" id="" class="form-control"size="125">
+             </div> 
             
             
             
@@ -90,47 +105,129 @@
 
     <div class="card w-auto" >    
         <div class="card-body" >
-         <div class="row">
-            <form name="form" id="form" method="POST" action="">
-            @csrf 
-            <label >Servicio </label> 
-            <select id="formTipo_nivel"  name="form" required>
-             @foreach ($servicios as $servicio)
-            <div >
-                <div class="col-3">
-                    <option value="">{{$servicio->nombre}}</option>
+           <div class="row">
+                    <form name="form" id="form" method="POST" action="">
+                        @csrf 
+                        <label >Servicio </label> 
+                        <select id="formTipo_nivel"  name="form" required>
+                            @foreach ($servicios as $servicio)
+                    
+                                <option value="">{{$servicio->nombre}}</option>
+                    
+                            @endforeach
+                        </select>   
+                        <input id="form" type="submit" value="Agregar">
+                    </form> 
+
+             </div>
+
+        </div>
+    </div>
+
+
+    <div class="card w-auto" >    
+        <div class="card-body" >
+                <div class="row">
+                     <label >Servicio </label> 
+                 <br>
                 </div>
-            </div>
-            @endforeach
-        </select>   
-        <input id="form" type="submit" value="Agregar">
-     </form>
-   
-         </div>
-
-</div>
-</div>
-
-
-<div class="card w-auto" >    
-    <div class="card-body" >
-     <div class="row">
-       
-        <label >Servicio </label> 
-        
-
-         @foreach ($servicios as $servicio)
-         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-            <label class="form-check-label" for="flexCheckChecked">
             
-                {{$servicio->nombre}}
-            </label>
-          </div>
+       
+            <div class="row">
+                     <div class="col">
+                         <label for="">HEMATOLOGIA</label>
+                                @foreach ($servicios as $servicio)        
+                                  <div class="form-check">
+                                      @if ($servicio->Tipo=='HEMATOLOGÍA')
+                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                     <label class="form-check-label" for="flexCheckChecked">
+                                      {{$servicio->nombre}}  
+                                     </label>
+                                    @endif
+                                    </div>
+            
+                                 @endforeach
+                      </div>
+                      <div class="col">
+                        <label for="">BACTERIOLOGÍA</label>
+                               @foreach ($servicios as $servicio)        
+                                 <div class="form-check">
+                                     @if ($servicio->Tipo=='BACTERIOLOGÍA')
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                     {{$servicio->nombre}}  
+                                    </label>
+                                   @endif
+                                   </div>
+           
+                                @endforeach
+                     </div>
+                     <div class="col">
+                        <label for="">INMUNOLOGÍA SANGUÍNEA</label>
+                               @foreach ($servicios as $servicio)        
+                                 <div class="form-check">
+                                     @if ($servicio->Tipo=='INMUNOLOGÍA SANGUÍNEA')
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                     {{$servicio->nombre}}  
+                                    </label>
+                                   @endif
+                                   </div>
+           
+                                @endforeach
+                     </div>
+            </div>
 
-        @endforeach
+            <div class="row">
+            <div class="col">
+                <label for="">MARCADORES TUMORALES</label>
+                       @foreach ($servicios as $servicio)        
+                         <div class="form-check">
+                             @if ($servicio->Tipo=='MARCADORES TUMORALES')
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                            <label class="form-check-label" for="flexCheckChecked">
+                             {{$servicio->nombre}}  
+                            </label>
+                           @endif
+                           </div>
    
-    <input id="form" type="submit" value="Agregar">
+                        @endforeach
+             </div>
+             <div class="col">
+               <label for="">PARASITOLOGÍA</label>
+                      @foreach ($servicios as $servicio)        
+                        <div class="form-check">
+                            @if ($servicio->Tipo=='PARASITOLOGÍA')
+                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                           <label class="form-check-label" for="flexCheckChecked">
+                            {{$servicio->nombre}}  
+                           </label>
+                          @endif
+                          </div>
+  
+                       @endforeach
+            </div>
+            <div class="col">
+               <label for="">PERFIL HORMONAL</label>
+                      @foreach ($servicios as $servicio)        
+                        <div class="form-check">
+                            @if ($servicio->Tipo=='PERFIL HORMONAL')
+                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                           <label class="form-check-label" for="flexCheckChecked">
+                            {{$servicio->nombre}}  
+                           </label>
+                          @endif
+                          </div>
+  
+                       @endforeach
+            </div>
+
+
+
+        </div>
+     </div>
+{{-- <div class="row"><input id="form" type="hideen" value="Agregar"></div>
+    --}} 
  </form>
 
      </div>
