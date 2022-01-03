@@ -287,6 +287,12 @@ return [
            
         ],
 
+        [
+            'text'        => 'OrdenLaboratorio',
+            'url'         => 'admin/ordens',
+          //  'icon'        => 'fas fa-clinic-medical',
+           
+        ],
 
         ['header' => 'CONFIGURACION DE CUENTA'],
         [

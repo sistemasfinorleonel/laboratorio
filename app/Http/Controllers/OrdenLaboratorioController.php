@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrdenLaboratorio;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 
 class OrdenLaboratorioController extends Controller
@@ -13,8 +14,9 @@ class OrdenLaboratorioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {  
+        $servicios=Servicio::all();
+       return view('admin.ordens.orden',compact('servicios'));
     }
 
     /**
