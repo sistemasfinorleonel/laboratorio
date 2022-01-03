@@ -21,6 +21,9 @@ class CreateEstablecimientosTable extends Migration
             $table->string('esta_area');
             $table->string('nivel');
             $table->string('tipo');
+            $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete('cascade');
+            $table->foreign('red_id')->references('id')->on('reds')->onDelete('cascade');
+          
             $table->timestamps();
         });
     }

@@ -16,6 +16,8 @@ class CreateRedsTable extends Migration
         Schema::create('reds', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('departamento_id');
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
+           
             $table->string('nombre');
             $table->timestamps();
         });
