@@ -13,8 +13,10 @@ class ServicioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   $servicios=Servicio::all();
+    
+          return view('admin.servicios.index',compact('servicios'));
+        
     }
 
     /**

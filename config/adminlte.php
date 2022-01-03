@@ -273,6 +273,20 @@ return [
            
         ],
 
+        [
+            'text'        => 'Examenes',
+            'url'         => 'admin/examens',
+          //  'icon'        => 'fas fa-clinic-medical',
+           
+        ],
+
+        [
+            'text'        => 'Servicios',
+            'url'         => 'admin/servicios',
+            //'icon'        => 'fas fa-clinic-medical',
+           
+        ],
+
 
         ['header' => 'CONFIGURACION DE CUENTA'],
         [
