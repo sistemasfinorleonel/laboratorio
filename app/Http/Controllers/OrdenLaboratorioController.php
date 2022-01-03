@@ -8,6 +8,7 @@ use App\Models\OrdenLaboratorio;
 use App\Models\Red;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class OrdenLaboratorioController extends Controller
 {
@@ -42,7 +43,11 @@ class OrdenLaboratorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $analisis=$request->analisis; 
+        foreach($analisis as $index => $id){
+
+return Servicio::where("$analisis[$index]",'=','nombre')->get();
+        }
     }
 
     /**
