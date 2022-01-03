@@ -17,21 +17,18 @@ class CreateOrdenLaboratoriosTable extends Migration
             $table->id();
             $table->date('fecha');
             $table->float('total')->nullable();
-             $table->unsignedBigInteger('paciente_id');
-            $table->unsignedBigInteger('establecimiento_id');
-            $table->unsignedBigInteger('medico_id')->unique();
+             $table->unsignedBigInteger('paciente_id')->constrained();
+            $table->unsignedBigInteger('establecimiento_id')->constrained();
+            $table->unsignedBigInteger('medico_id')->constrained();
             $table->foreign('paciente_id')->references('id')
                 ->on('pacientes')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ;
             $table->foreign('medico_id')->references('id')
                 ->on('medicos')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ;
             $table->foreign('establecimiento_id')->references('id')
                 ->on('establecimientos')
-                ->onDelete('cascade')
-                ->onUpdate('cascade'); 
+                ; 
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Medico extends Model
-{
+{protected $guarded = ['id'];
     use HasFactory;
     public function user()
     {
@@ -16,4 +16,7 @@ class Medico extends Model
     {
         return $this->hasMany('App\Models\OrdenLaboratorio');
     }
+    public function orden_laboratorios(){
+      return $this->hasMany('App\Models\OrdenLaboratorio');
+  }
   }
