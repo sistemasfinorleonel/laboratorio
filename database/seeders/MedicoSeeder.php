@@ -17,6 +17,7 @@ class MedicoSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Medico::Create(['ci'=>'97291170 SCZ','nombre'=>'ABIGAIL','paterno'=>'DURAN','materno'=>'ESPINOZA','telefono'=>'60992917','fecha_nacimiento'=>'1/1/1986','sexo'=>'F','direccion'=>'Calle la amargura','user_id'=>'1']);
 Medico::Create(['ci'=>'6308705 SCZ','nombre'=>'ADRIN','paterno'=>'VIERA','materno'=>'LOPZA','telefono'=>'70066505','fecha_nacimiento'=>'2/1/1986','sexo'=>'M','direccion'=>'calla angel gutierrez','user_id'=>'1']);
 Medico::Create(['ci'=>'4699199 SCZ','nombre'=>'ALEX JOSEPH','paterno'=>'HERRERA','materno'=>'RIVEZA','telefono'=>'60020151','fecha_nacimiento'=>'3/1/1986','sexo'=>'M','direccion'=>'Calle la amargura','user_id'=>'1']);
@@ -42,6 +43,8 @@ Medico::Create(['ci'=>'4699199 SCZ','nombre'=>'DENIS MARTIN','paterno'=>'CASTILL
 >>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
 =======
 >>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
+=======
+>>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
         Medico::Create(['ci'=>'97291170 SCZ','nombre'=>'ABIGAIL','paterno'=>'DURAN','materno'=>'ESPINOZA','telefono'=>'60992917','fecha_nacimiento'=>'1986/1/1','sexo'=>'Femenino','direccion'=>'Calle la amargura','user_id'=>'1']);
 Medico::Create(['ci'=>'6308705 SCZ','nombre'=>'ADRIN','paterno'=>'VIERA','materno'=>'LOPZA','telefono'=>'70066505','fecha_nacimiento'=>'1986/1/2','sexo'=>'Masculino','direccion'=>'calla angel gutierrez','user_id'=>'1']);
 Medico::Create(['ci'=>'4699199 SCZ','nombre'=>'ALEX JOSEPH','paterno'=>'HERRERA','materno'=>'RIVEZA','telefono'=>'60020151','fecha_nacimiento'=>'1986/1/3','sexo'=>'Masculino','direccion'=>'Calle la amargura','user_id'=>'1']);
@@ -63,6 +66,9 @@ Medico::Create(['ci'=>'6308705 SCZ','nombre'=>'DANIELA HELEN','paterno'=>'FLORES
 Medico::Create(['ci'=>'4699199 SCZ','nombre'=>'DENIS MARTIN','paterno'=>'CASTILLO','materno'=>'LOZD','telefono'=>'60992917','fecha_nacimiento'=>'1986/1/19','sexo'=>'Masculino','direccion'=>'Calle la amargura','user_id'=>'1']);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
+=======
 >>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
 =======
 >>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
