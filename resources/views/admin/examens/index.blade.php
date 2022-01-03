@@ -26,6 +26,8 @@
                             <th>unidad medida</th>
                             <th>rango ini</th>     
                             <th>rango fin</th>   
+                            <th >nombre servicio</th>
+                            <th >Tipo</th>
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -42,7 +44,8 @@
                                     <td>{{$examen->referencia->unidad_medida}}</td>
                                     <td>{{$examen->referencia->rango_ini}}</td>
                                     <td>{{$examen->referencia->rango_fin}}</td>
-                                   
+                                    <td>{{$examen->servicio->nombre}}</td>
+                                    <td>{{$examen->servicio->Tipo}}</td>
                                     <td>
                                         <a class ="btn btn-primary btn-sm"href="{{route('examens.edit',$examen)}}">editar</a>
                                     </td>  

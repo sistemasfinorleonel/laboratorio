@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Examen;
 use App\Models\Referencia;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 use League\CommonMark\Reference\Reference;
 
@@ -27,8 +28,8 @@ class ExamenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-      return view('admin.examens.create');  
+    {   $servicios=Servicio::all();
+      return view('admin.examens.create',compact('servicios'));  
     }
 
     /**
@@ -48,16 +49,14 @@ class ExamenController extends Controller
  'rango_ini'=> $request->rango_ini,
  'rango_fin'=> $request->rango_fin,
 ]);
-  
- $examen['nombre']=$request->nombre;
- $examen['referencia_id']=Referencia::latest()->first()->id;   
- $examen['servicio_id']=Referencia::latest()->first()->id;   
  Examen::create([
 'nombre'=>$request->nombre,
-    'referencia_id'=>Referencia::latest()->first()->id,   
-    'servicio_id'=>Referencia::latest()->first()->id, 
+'servicio_id'=>$request->servicio_id,   
+'referencia_id'=>Referencia::latest()->first()->id, 
  ]);
- redirect()->route('examens.index');
+ //return Referencia::latest()->first()->id;
+ return redirect()->route('examens.index');
+ //return view('admin.examens.index');
 }
 
     /**
@@ -78,8 +77,9 @@ class ExamenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Examen $examen)
-    {
-        //
+    { $servicios=Servicio::all();
+        
+        return view('admin.examens.edit',compact('servicios')); 
     }
 
     /**

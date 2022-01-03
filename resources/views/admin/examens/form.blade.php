@@ -48,9 +48,21 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('rango_fin','rango_fin') !!}
+    {!! Form::label('nombre','rango_fin') !!}
     {!! Form::number('rango_fin',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
 @error('rango_fin')
+<span class="text-danger">{{$message}}</span>
+@enderror
+</div>
+<div class="form-group">
+    {!! Form::label('nombre','nombre') !!}
+    <select name="servicio_id" id="servicio_id">
+        <option value="{{isset($examen->servicio->nombre)?$examen->servicio->nombre:""}}">{{isset($examen->servicio->nombre)?$examen->servicio->nombre:""}}</option>
+     
+        @foreach ($servicios as $servicio)
+            <option value="{{$servicio->id}}">{{$servicio->nombre}}</option>
+        @endforeach
+    </select>@error('nombre')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>

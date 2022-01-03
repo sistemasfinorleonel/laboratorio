@@ -21,11 +21,13 @@ class CreateExamensTable extends Migration
             $table->foreign('referencia_id')->references('id')
             ->on('referencias')
             ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->onUpdate('cascade')
+            ;
             $table->foreign('servicio_id')->references('id')
             ->on('servicios')
             ->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->onUpdate('cascade')
+           ;
             $table->timestamps();
         });
     }
