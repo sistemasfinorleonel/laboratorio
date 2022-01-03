@@ -20,13 +20,22 @@
 <div  class="container py-4">
 
 <div class="card">
-    <div class="card-header text-center">
-        SOLICITUD DE  EXAMEN DE
-        <br>
-        LABORATORIO ,IMAGENOLOGIA/GABINETE 
-        <br>
-            O SERVICIOs DE SANGRE
-    </div>
+   <div class="row">
+       <div class="col">
+        <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="200" class="" alt="">
+        </div> 
+        <div class="col text-center">
+            <h3>SOLICITUD DE  EXAMEN DE </h3>
+             <br>
+            <h3> LABORATORIO,IMAGENOLOGIA/GABINETE </h3>
+             <br>
+                 <h3>O SERVICIOs DE SANGRE</h3>
+         </div>
+         <div class="col">
+            <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
+            </div>
+   </div>
+   
     <form class="form-inline" action="" method="post">
          
             <div class="form-group">
