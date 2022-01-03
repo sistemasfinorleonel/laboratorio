@@ -16,6 +16,7 @@ class PacienteSeeder extends Seeder
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Paciente::Create(['ci'=>'1958162 SCZ','nombre'=>'.PEDRO','paterno'=>'VEIZAGA','materno'=>'CABRERA','telefono'=>'71339531','fecha_nacimiento'=>'16/2/1946','edad'=>'75','sexo'=>'M','direccion'=>'B/  10 DE NOVIEMBRE','user_id'=>'1']);
 Paciente::Create(['ci'=>'15440478 SCZ','nombre'=>'AARON','paterno'=>'ALBINO','materno'=>'ALBINO','telefono'=>'71339532','fecha_nacimiento'=>'15/4/2012','edad'=>'9','sexo'=>'M','direccion'=>'B/ 3 DE MAYO|¦','user_id'=>'1']);
 Paciente::Create(['ci'=>'15878032 CHQ','nombre'=>'AARON GABRIEL','paterno'=>'AVILA','materno'=>'CITA','telefono'=>'71339533','fecha_nacimiento'=>'8/5/2019','edad'=>'2','sexo'=>'M','direccion'=>'CALLE 11|¦','user_id'=>'1']);
@@ -28,6 +29,8 @@ Paciente::Create(['ci'=>'16166825 SCZ','nombre'=>'ABDEL','paterno'=>'VACA','mate
 Paciente::Create(['ci'=>'3897611 SCZ','nombre'=>'ABDIAZ','paterno'=>'ANDIA','materno'=>'SAAVEDRA','telefono'=>'71339540','fecha_nacimiento'=>'16/2/1970','edad'=>'51','sexo'=>'M','direccion'=>'B/ MUNICIPAL','user_id'=>'1']);
 Paciente::Create(['ci'=>'16339239 SCZ','nombre'=>'LIDIA','paterno'=>'MIRANDA','materno'=>'GUARISTI','telefono'=>'71339541','fecha_nacimiento'=>'21/5/2019','edad'=>'2','sexo'=>'F','direccion'=>'VILLA VIRGINIA|¦','user_id'=>'1']);
 =======
+=======
+>>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
 =======
 >>>>>>> 479b5a699949eb79ddb0647ec5ca61bf575c0c5a
         Paciente::Create(['ci'=>'1958162 SCZ','nombre'=>'.PEDRO','paterno'=>'VEIZAGA','materno'=>'CABRERA','telefono'=>'71339531','fecha_nacimiento'=>'1946/2/16','edad'=>'75','sexo'=>'Masculino','direccion'=>'B/  10 DE NOVIEMBRE','user_id'=>'1']);
