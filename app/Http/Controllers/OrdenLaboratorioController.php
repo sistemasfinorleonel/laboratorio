@@ -43,10 +43,11 @@ class OrdenLaboratorioController extends Controller
      */
     public function store(Request $request)
     {
-        $analisis=$request->analisis; 
+        return $analisis=$request->analisis;
+         $analisisId=$request->analisisID; 
         foreach($analisis as $index => $id){
 
-return Servicio::where("$analisis[$index]",'=','nombre')->get();
+   $analisis[$index];
         }
     }
 

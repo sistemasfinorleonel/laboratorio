@@ -8,15 +8,6 @@
 @section('content')
 
 
-
-
-
-
-
-
-
-
-
 <div  class="container py-4">
 
 <div class="card">
@@ -37,7 +28,7 @@
             </div>
    </div>
    
-    <form class="form-inline" action="" method="post">
+    <form class="form-inline" action="" method="post" >
          
             <div class="form-group">
                 <label for="red">Red</label>
@@ -151,6 +142,7 @@
                                                 <div class="form-check">
                                                     @if ($servicio->Tipo=='HEMATOLOGÍA')
                                                     <input class="form-check-input" type="checkbox" value="{{$servicio->nombre}}"name="analisis[]" id="flexCheckChecked" >
+                                                    <input class="form-check-input" type="hidden" value="{{$servicio->id}}"name="analisisId[]"id="flexCheckChecked" >
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                     {{$servicio->nombre}}  
                                                     </label>
@@ -165,6 +157,7 @@
                                                 <div class="form-check">
                                                     @if ($servicio->Tipo=='BACTERIOLOGÍA')
                                                     <input class="form-check-input" type="checkbox" value="{{$servicio->nombre}}"name="analisis[]" id="flexCheckChecked" >
+                                                    <input class="form-check-input" type="hidden" value="{{$servicio->id}}"name="analisisId[]"id="flexCheckChecked" >
                                                     <label class="form-check-label" for="flexCheckChecked">
                                                     {{$servicio->nombre}}  
                                                     </label>
@@ -196,6 +189,8 @@
                                         <div class="form-check">
                                             @if ($servicio->Tipo=='MARCADORES TUMORALES')
                                             <input class="form-check-input" type="checkbox" value="{{$servicio->nombre}}"name="analisis[]"id="flexCheckChecked" >
+                                            <input class="form-check-input" type="hidden" value="{{$servicio->id}}"name="analisisId[]"id="flexCheckChecked" >
+                                        
                                             <label class="form-check-label" for="flexCheckChecked">
                                             {{$servicio->nombre}}  
                                             </label>
@@ -210,6 +205,8 @@
                                         <div class="form-check">
                                             @if ($servicio->Tipo=='PARASITOLOGÍA')
                                         <input class="form-check-input" type="checkbox" value="{{$servicio->nombre}}"name="analisis[]"id="flexCheckChecked" >
+                                        <input class="form-check-input" type="hidden" value="{{$servicio->id}}"name="analisisId[]"id="flexCheckChecked" >
+                                        
                                         <label class="form-check-label" for="flexCheckChecked">
                                             {{$servicio->nombre}}  
                                         </label>
@@ -224,6 +221,8 @@
                                         <div class="form-check">
                                             @if ($servicio->Tipo=='PERFIL HORMONAL')
                                         <input class="form-check-input" type="checkbox" value="{{$servicio->nombre}}"name="analisis[]"id="flexCheckChecked" >
+                                       
+                                        <input class="form-check-input" type="hidden" value="{{$servicio->id}}"name="analisisId[]"id="flexCheckChecked" >
                                         <label class="form-check-label" for="flexCheckChecked">
                                             {{$servicio->nombre}}  
                                         </label>
@@ -238,31 +237,42 @@
                     </div>
                 </div>
 
-                <input type="submit" value="Ingresar Datos" >
+                <input type="submit" value="Ingresar Datos" id="guar" >
+                
             </form>
         
+            <form id="guardartodo" >
+                <button type="submit" class="btn btn-primary">
+                    Guardar Todo
+                </button>
+            </form>
         </div>
      </div>
 
 </div>
 @stop
-{{-- 
+
 
 <!-- niveltipocuenta java scrip mas ajax-->
 <script>{{time();}}</script>
 
 <script>
     //ACTUALIZAR UN REGISTRO
-    $('#prueba').submit(function(e){
+    $('#guardartodo').submit(function(e){
         e.preventDefault();
         var c=1;
-        var n="{{$contador}}";
+        var n="";
         while (c<=n) {
-        var t="#"+"form"+c;
-        var tipo = $(t+"Tipo_nivel").val();
-        var id = $(t+"id_nivel").val();
+        /* var t="#"+"form"+c; */
+        var tipo = $("#red_id").val();
+        var id = $("#municipio_id").val();
+        
+        var id = $("#establecimiento_id").val();
+        var id = $("#fecha_solicitud").val();
+        var id = $("#municipio_id").val();
+        var id = $("#municipio_id").val();
         var _token2 = $("input[name=_token]").val();
-        var link="{{asset('')}}"+"tipoNivel/update/"+id;
+        var link="{{asset('')}}"+"tipoNivel/update/";
         
         $.ajax({
             url: link,
@@ -279,7 +289,7 @@
             }
 
         })
-        c++;
+        
        }
        var link2="{{asset('')}}"+"tipoNivel";
      
@@ -296,4 +306,3 @@
   </script>
   
   <!-- end niveltipocuenta java scrip mas ajax-->
-   --}}

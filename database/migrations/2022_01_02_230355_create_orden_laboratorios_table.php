@@ -22,13 +22,14 @@ class CreateOrdenLaboratoriosTable extends Migration
             $table->unsignedBigInteger('medico_id');
             $table->foreign('paciente_id')->references('id')
                 ->on('pacientes')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('medico_id')->references('id')
                 ->on('medicos')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('establecimiento_id')->references('id')
                 ->on('establecimientos')
-                ->onDelete('cascade')
                 ->onUpdate('cascade'); 
             $table->timestamps();
         });
