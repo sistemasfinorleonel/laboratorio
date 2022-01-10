@@ -18,12 +18,14 @@ class CreateExamensTable extends Migration
             $table->string('nombre');
             $table->unsignedBigInteger('referencia_id');
             $table->unsignedBigInteger('servicio_id');
-            $table->foreign('referencia_id')->references('id')
+            $table->foreign('referencia_id')
+            ->references('id')
             ->on('referencias')
             ->onDelete('cascade')
             ->onUpdate('cascade')
             ;
-            $table->foreign('servicio_id')->references('id')
+            $table->foreign('servicio_id')
+            ->references('id')
             ->on('servicios')
             ->onDelete('cascade')
             ->onUpdate('cascade')

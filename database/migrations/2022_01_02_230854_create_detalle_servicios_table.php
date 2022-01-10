@@ -18,9 +18,9 @@ class CreateDetalleServiciosTable extends Migration
              
             $table->unsignedBigInteger('orden_laboratorio_id')->constrained();
             $table->unsignedBigInteger('servicio_id')->constrained();
-            $table->unsignedBigInteger('examen_id')->constrained();
+         //   $table->unsignedBigInteger('examen_id')->constrained();
            $table->primary(['orden_laboratorio_id','servicio_id']);
-           $table->date('fecha_recepcion_muestra');
+           $table->string('fecha_recepcion_muestra')->nullable();
            $table->foreign('orden_laboratorio_id')->references('id')
                 ->on('orden_laboratorios')
                 ->onDelete('cascade')
@@ -29,11 +29,11 @@ class CreateDetalleServiciosTable extends Migration
                 ->on('servicios')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('examen_id')->references('id')
+         /*    $table->foreign('examen_id')->references('id')
                 ->on('examens')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            
+          */   
             
              $table->timestamps();
         });

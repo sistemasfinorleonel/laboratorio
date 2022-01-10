@@ -15,11 +15,18 @@ class Examen extends Model
       return $this->belongsTo('App\Models\Referencia');
     }
 
-    public function detalle_servicio() {
-        return $this->hasOne('App\Models\DetalleServicio');
+    public function detalle_examen() {
+        return $this->hasOne('App\Models\DetalleExamen');
       }
     public function servicio()
     {
         return $this->belongsTo('App\Models\Servicio');
     } 
-}
+
+    public function scopeDetalle($query,$ser_id)
+    {
+       return $query->where('servicio_id',$ser_id);//->where(1,'servicio_id');//where(1,'servicio_id')->get();
+    }
+    
+
+  }

@@ -15,7 +15,7 @@ class CreateOrdenLaboratoriosTable extends Migration
     {
         Schema::create('orden_laboratorios', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
+            $table->string('fecha')->nullable();
             $table->float('total')->nullable();
             $table->unsignedBigInteger('paciente_id');
             $table->unsignedBigInteger('establecimiento_id');

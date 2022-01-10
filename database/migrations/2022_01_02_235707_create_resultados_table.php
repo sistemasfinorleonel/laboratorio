@@ -28,7 +28,6 @@ class CreateResultadosTable extends Migration
                 ->references('id')
                 ->on('laboratoristas')
                 ->onDelete('cascade');
-
             $table->timestamps();
         });
     }

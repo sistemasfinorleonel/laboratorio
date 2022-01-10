@@ -13,4 +13,8 @@ class Servicio extends Model
     {
         return $this->hasMany('App\Models\Examen');
     }
+    public function ordenes(){
+        return $this->belongsToMany('App\Models\OrdenLaboratorio');
+    }
+    
 }

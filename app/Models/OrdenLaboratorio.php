@@ -20,4 +20,7 @@ class OrdenLaboratorio extends Model
     {
         return $this->belongsTo('App\Models\Paciente');
     }  
+    public function servicios(){
+    return $this->belongsToMany('App\Models\Servicio');
+    }
 }

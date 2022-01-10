@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetalleExamen;
+use App\Models\DetalleServicio;
+use App\Models\Examen;
+use App\Models\OrdenLaboratorio;
 use App\Models\Resultado;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 
 class ResultadoController extends Controller
@@ -13,7 +18,9 @@ class ResultadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {  $detalleservicios=DetalleExamen::all();
+
+        return view('admin.resultados.index',compact('detalleservicios'));
         //
     }
 
@@ -22,9 +29,9 @@ class ResultadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request)
+    {  
+
     }
 
     /**
@@ -35,7 +42,10 @@ class ResultadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $id_servicio=$request->id_service;
+        $id_orden=$request->id_orden;
+       return  view('admin.resultados.verresultados');
+   //
     }
 
     /**
@@ -46,7 +56,7 @@ class ResultadoController extends Controller
      */
     public function show(Resultado $resultado)
     {
-        //
+    
     }
 
     /**
@@ -55,9 +65,20 @@ class ResultadoController extends Controller
      * @param  \App\Models\Resultado  $resultado
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resultado $resultado)
-    {
-        //
+    public function edit()
+    { 
+        $detalleservicios=DetalleServicio::where('orden_laboratorio_id', 2)->get('servicio_id');
+      // $idservice= $detalleservicios->servicio_id;
+      // return $leonel;
+      $services=Servicio::all(); 
+      $examenes=Examen::all();
+      // $services=Servicio::where("$detalleservicios->servicio_id",'=','id')->get();
+        //$examenes=Examen::where("$services->id",'servicio_id')->first();
+       
+        
+      //  $detalleexamens=DetalleExamen::all();
+
+        return view('admin.resultados.edit',compact('services','examenes','detalleservicios'));
     }
 
     /**
