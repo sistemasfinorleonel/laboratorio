@@ -10,129 +10,141 @@
 
 <div  class="container py-4">
 
-<div class="card">
-   <div class="card w-auto" > 
+    <div class="card">
+    <div class="card container" > 
    
     <form class="" action="{{ route('ordens.store') }}" method="post" >
         @csrf 
-            <div class="row">
-                        <div class="col">
-                            <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="200" class="" alt="">
-                        </div> 
-                        <div class="col text-center">
-                                <h3>SOLICITUD DE  EXAMEN DE </h3>
-                            <br>
-                                <h3> LABORATORIO,IMAGENOLOGIA/GABINETE </h3>
-                            <br>
-                                <h3>O SERVICIOs DE SANGRE</h3>
-                        </div>
-                        <div class="col">
-                            <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
-                        </div>
-            </div>
-            <div class="row">
+            <div class="row shadow">
                 <div class="col">
-                     <label for="red" class="form" size="30" >RED</label>
-                    <select name="red_id" id="red_id"  >
+                    <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="150" class="" alt="">
+                </div> 
+                    <div class="col text-center">
+                        <h2 class="fw-bold">SOLICITUD DE  EXAMEN DE </h2>
+                        <h2 class="fw-bold"> LABORATORIO,IMAGENOLOGIA/GABINETE </h2>
+                        <h2 class="fw-bold">O SERVICIOS DE SANGRE</h2>
+                    </div>
+                    <div class="col">
+                        <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
+                    </div>
+            </div> <br>
+        <div class="container">
+        <div class="form-group ">
+            <div class="row mb-3">
+
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-text">Red</span>
+                    <select name="red_id" id="red_id"  class="form-control">
                         @foreach ($reds as $red)
                             <option value="{{$red->id}}">{{$red->nombre}}</option>
                         @endforeach
                     </select>  
+                    </div>
                 </div>
+
                 <div class="col">
-                    <label for="">MUNICIPIO</label>
-                    <select name="municipio_id" id="municipio_id">
-                        @foreach ($municipios as $municipio)
-                            <option value="{{$municipio->id}}">{{$municipio->nombre}}</option>
-                        @endforeach
-                    </select> 
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">Municipio</span>
+                        <select name="municipio_id" id="municipio_id" class="form-control">
+                            @foreach ($municipios as $municipio)
+                                <option value="{{$municipio->id}}">{{$municipio->nombre}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <div class="col">
-                 <label for=""size="10">D-8</label>
-                </div>
+                
             </div> 
-            <div class="row">  
-                    <div class="col">
-                        <label for="">ESTABLECIMIENTO</label>
-                        <select name="establecimiento_id" id="establecimiento_id" class="form">
+            
+
+            <div class="row mb-3">  
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text"for="">Establecimiento</span>
+                        <select name="establecimiento_id" id="establecimiento_id" class="form-control">
                             @foreach ($establecimientos as $establecimiento)
                                 <option value="{{$establecimiento->id}}">{{$establecimiento->nombre}}</option>
                             @endforeach
                         </select> 
                     </div> 
-                    
-                
-                
-                    <div class="col" >
-                    
-                        <label for="fecha">FECHA DE SOLUCITUD</label>
+                </div>
+                                
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">Fecha de solicitud</span>
                        {{--  <input type="date" name="fecha_solicitud" id="fecha_solicitud" class="form" value="{{$mytime}}">
-                        --}} <input type="text" name="fecha_solicitud" id="fecha_solicitud" value="{{$mytime}}">
-                    
+                        --}} <input type="date" name="fecha_solicitud" id="fecha_solicitud"  class="form-control">
                     </div> 
-            </div>
-            <div class="row">
-                <div class="col">
-                
-                    <label for="">Nro Registro</label>
-                    <input type="text" name="numero_registro" id="numero_registro" class="form-control"size="40">
-                </div> 
-
-                <div class="col">
-                
-                    <label for="">Edad</label>
-                    <input type="text" name="edad" id="edad" class="form-control"size="12">
-                </div> 
-                <div class="col">
-                
-                    <label for="">Sexo</label>
-                    <input type="text" name="sexo" id="sexo" class="form-control"size="12">
                 </div> 
             </div>
-            <div class="row"></div>
-                <div class="form-group">   
-                    <label for="">Paciente</label>
-                 
-                    <select name="paciente_id" id="paciente_id" >
-                 
-                        @foreach ($pacientes as $paciente)
-        
-                            <option value="{{$paciente->id}}">{{$paciente->nombre}}  {{$paciente->paterno}} {{$paciente->nombre}}  {{$paciente->paterno}}</option>
-                        @endforeach
-                    </select>
-                    
-              
-              
-                </div> 
 
-                <div class="form-group">                
-                    <label for="">Celula Identidad</label>
-                    <input type="text" name="ci" id="ci" class="form-control"size="40">
-                </div> 
-            <div class="form-group">
-               
-                <label for="">medico_id clinico</label>
-                <input type="text" name="diagnostico" id="diagnostico" class="form-control"size="125">
-             </div>
-             <div class="form-group">
-                <label for="">Medico DR(a):</label>
-               
-                <select name="medico_id" id="medico_id" >
-                 
-                @foreach ($medicos as $medico)
-
-                    <option value="{{$medico->id}}">{{$medico->nombre}} {{$medico->paterno}} {{$medico->materno}}</option>
-                @endforeach
-            </select>
-                 
-             </div> 
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">Nro Registro</span>
+                        <input type="text" name="numero_registro" id="numero_registro" class="form-control"size="40">
+                    </div> 
+                </div>
             
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">Edad</span>
+                        <input type="text" name="edad" id="edad" class="form-control"size="12">
+                    </div> 
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text">Sexo</span>
+                        <input type="text" name="sexo" id="sexo" class="form-control"size="12">
+                    </div> 
+                </div>
+            </div> 
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="input-group input-group-lg">   
+                        <span class="input-group-text">Paciente</span>
+                        <select name="paciente_id" id="paciente_id" class="form-control">
+                        @foreach ($pacientes as $paciente)
+                            <option value="{{$paciente->id}}">{{$paciente->nombre}}  {{$paciente->paterno}} {{$paciente->nombre}}  {{$paciente->paterno}}</option>
+                            @endforeach
+                        </select>
+                    </div> 
+                </div>
 
+                <div class="col">
+                    <div class="input-group input-group-lg">                
+                        <span class="input-group-text">Celula Identidad</span>
+                        <input type="text" name="ci" id="ci" class="form-control"size="40">
+                    </div> 
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="input-group input-group-lg">                   
+                        <span class="input-group-text">medico_id clinico</span>
+                        <input type="text" name="diagnostico" id="diagnostico" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="input-group input-group-lg">                   
+                        <span class="input-group-text">Medico Solicitante:</span>
+                        <select name="medico_id" id="medico_id" class="form-control">
+                            @foreach ($medicos as $medico)
+                            <option value="{{$medico->id}}">{{$medico->nombre}} {{$medico->paterno}} {{$medico->materno}}</option>
+                            @endforeach
+                        </select>
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+    </div>
              
                 <div class="card w-auto" >    
                     <div class="card-body" >
-                            <div class="row">
-                                <label >Servicio </label> 
+                            <div class="row container">
+                                <label >Servicio a solicitar</label> 
                                   <br>
                             </div>
                         
@@ -240,7 +252,7 @@
 
                 
                 </div> 
-                <input type="submit" value="Ingresar Datos" id="guar" >
+                <input type="submit" value="Guardar orden" id="guar" class="btn btn-success" >
             </form>
         
            {{--  <form id="guardartodo" >
@@ -252,6 +264,7 @@
      </div>
 
 </div>
+
 @stop
 
 
