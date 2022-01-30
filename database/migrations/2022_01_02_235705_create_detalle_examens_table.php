@@ -14,13 +14,14 @@ class CreateDetalleExamensTable extends Migration
     public function up()
     {
         Schema::create('detalle_examens', function (Blueprint $table) {
-        
-            $table->unsignedBigInteger('or_lab_id')->constrained();
-            $table->unsignedBigInteger('ser_id')->constrained();
-            $table->unsignedBigInteger('exa_id')->constrained();
-            $table->primary(['or_lab_id','ser_id','exa_id']);
-            $table->foreign(['or_lab_id','ser_id'])
-            ->references(['orden_laboratorio_id','servicio_id'])
+           $table->id();
+           $table->unsignedBigInteger('laboratorista_id')->nullable(); 
+            $table->unsignedBigInteger('oservicio_id')->nullable();
+            $table->unsignedBigInteger('exa_id')->nullable();
+            $table->float('resultado')->nullable();
+            $table->string('descripcion')->nullable();
+            $table->foreign('oservicio_id')
+            ->references('id')
                  ->on('detalle_servicios')
                  ->onDelete('cascade')
                  ->onUpdate('cascade');
@@ -28,7 +29,10 @@ class CreateDetalleExamensTable extends Migration
                  ->on('examens')
                  ->onDelete('cascade')
                  ->onUpdate('cascade');
-         
+                 $table->foreign(['laboratorista_id'])
+                 ->references('id')
+                 ->on('laboratoristas')
+                 ->onDelete('cascade');
  
             $table->timestamps();
         });

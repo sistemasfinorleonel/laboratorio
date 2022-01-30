@@ -14,26 +14,18 @@ class CreateDetalleServiciosTable extends Migration
     public function up()
     {
         Schema::create('detalle_servicios', function (Blueprint $table) {
-        
-             
-            $table->unsignedBigInteger('orden_laboratorio_id')->constrained();
-            $table->unsignedBigInteger('servicio_id')->constrained();
-         //   $table->unsignedBigInteger('examen_id')->constrained();
-           $table->primary(['orden_laboratorio_id','servicio_id']);
-           $table->string('fecha_recepcion_muestra')->nullable();
-           $table->foreign('orden_laboratorio_id')->references('id')
+         $table->id();     
+        $table->unsignedBigInteger('orden_laboratorio_id');
+        $table->unsignedBigInteger('servicio_id');
+        $table->string('fecha_recepcion_muestra')->nullable();
+        $table->foreign('orden_laboratorio_id')->references('id')
                 ->on('orden_laboratorios')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('servicio_id')->references('id')
+        $table->foreign('servicio_id')->references('id')
                 ->on('servicios')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-         /*    $table->foreign('examen_id')->references('id')
-                ->on('examens')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-          */   
             
              $table->timestamps();
         });

@@ -18,7 +18,7 @@ class ResultadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  $detalleservicios=DetalleExamen::all();
+    {  $detalleservicios=DetalleServicio::all();
 
         return view('admin.resultados.index',compact('detalleservicios'));
         //
@@ -54,9 +54,9 @@ class ResultadoController extends Controller
      * @param  \App\Models\Resultado  $resultado
      * @return \Illuminate\Http\Response
      */
-    public function show(Resultado $resultado)
+    public function show(DetalleServicio $detalle)
     {
-    
+    return $detalle;
     }
 
     /**
@@ -66,7 +66,7 @@ class ResultadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(DetalleServicio $detalle)
-    {
+    { return $detalle;
         $detalleservicios=DetalleServicio::where('orden_laboratorio_id', 3)->get('servicio_id');
       // $idservice= $detalleservicios->servicio_id;
       // return $leonel;

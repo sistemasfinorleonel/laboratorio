@@ -24,7 +24,7 @@ Route::resource('examens', ExamenController::class)->names('examens');
 Route::resource('establecimientos', EstablecimientoController::class)->names('establecimientos');
 Route::resource('servicios', ServicioController::class)->names('servicios');
 Route::resource('ordens', OrdenLaboratorioController::class)->names('ordens');
-Route::resource('resultados', ResultadoController::class)->names('resultados');
+Route::resource('orden-servicios', ResultadoController::class)->names('ordenservicios');
 Route::get('mostrardetalles/{{$detalle}}',[DetalleresultadoexamenController::class,'mostrar'])->name('mostrardetalles');
 
 //Route::get('ordens',[ OrdenLaboratorioController::class,'index'])->name('ordens');

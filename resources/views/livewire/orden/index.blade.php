@@ -7,7 +7,7 @@
                     <option value="">Seleccione un Departamento</option>
                 @endif
                 @foreach (departamentos() as $departamento)
-                    <option value="{{$departamento->id}}">{{$departamento->nombre}} </option>
+                    <option wire:click="$set('departamento_id',{{$departamento->id}})" value="{{$departamento->id}}">{{$departamento->nombre}} </option>
                 @endforeach
             </select>
             <small id="helpId" class="text  -muted"></small>
@@ -28,7 +28,7 @@
       
         </div>
            
-        @if ($provincia_id)
+    {{--     @if ($provincia_id)
         <div class="mb-3" wire:ignore>
             <label for="" class="form-label">Establecimiento</label>
             <select name="" class="form-control" id="" wire:model='establecimiento_id'>
@@ -43,7 +43,7 @@
       
         </div>
            
-        @endif
+        @endif --}}
         
         @endif
         

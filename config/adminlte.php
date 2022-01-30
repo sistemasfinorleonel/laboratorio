@@ -294,12 +294,12 @@ return [
            
         ],
 
-        ['header' => 'CONFIGURACION DE CUENTA'],
+      
         [
             'text' => 'Orden-Servicios',
-            'url'  => 'resultados',
+            'url'  => 'admin/orden-servicios',
             'icon' => 'fas fa-fw fa-user',
-        ],
+        ],  ['header' => 'CONFIGURACION DE CUENTA'],
         [
             'text' => 'Cambiar contraseña',
             'url'  => 'admin/settings',

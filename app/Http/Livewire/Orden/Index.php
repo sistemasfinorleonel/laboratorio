@@ -12,8 +12,8 @@ class Index extends Component
     protected $paginationTheme="bootstrap";
     use WithPagination;
     public $nombre;
-    public $departamento_id;
-    public $provincia_id;
+    public $departamento_id="1";
+    public $provincia_id="1";
     public function render()
     { $data= OrdenLaboratorio::all();
         return view('livewire.orden.index',[

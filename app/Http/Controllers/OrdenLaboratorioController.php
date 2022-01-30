@@ -60,9 +60,10 @@ class OrdenLaboratorioController extends Controller
      */
     public function store(Request $request)
     {// return $request;  
-       
+        
        $ser_id=$request->select_process; 
-        $nuevo=new OrdenLaboratorio;
+       
+       $nuevo=new OrdenLaboratorio;
         $nuevo['fecha']=new DateTime('today');
         $nuevo['paciente_id']=$request->paciente_id;
         $nuevo['establecimiento_id']=$request->establecimiento_id;
@@ -89,25 +90,21 @@ class OrdenLaboratorioController extends Controller
             //  $cont=Examen::withCount(1,'servicio_id')->get(); 
         $c=0;
         $idlaboratorioultimo=  OrdenLaboratorio::latest()->first()->id;
-   //return $cont;
-   // return $detalles[$c];
-         // OrdenLaboratorio::all()->orderby('id');
-      
-         foreach($servicioEspera as $index => $id){
+           foreach($servicioEspera as $index => $id){
             $id_ser=$servicioEspera[$index];
-            DetalleServicio::create([
+            $detalle_service=DetalleServicio::create([
                 'orden_laboratorio_id'=>"$idlaboratorioultimo",
                 'servicio_id'=> "$id_ser",
              'fecha_recepcion_muestra'=>null,
             ]); 
-                foreach($detalles as $index => $id){
+                 foreach($detalles as $index => $id){
                     $id_examen= $detalles[$index]->id;   
                     DetalleExamen::create([
-                        'or_lab_id'=>"$idlaboratorioultimo",
-                        'ser_id'=> "$id_ser",
+                       
+                        'oservicio_id'=> "$detalle_service->id",
                         'exa_id'=>"$id_examen",
                 
-                    ]); 
+                    ]);  
                 }
         
            }

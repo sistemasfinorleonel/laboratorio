@@ -6,51 +6,43 @@
 
 @section('content')
 <div class="card">
-    <div class="card-body">
-                                
         <div class="card-header">
-           {{--     <a class ="btn btn-primary"href="{{-- {{route('medicos.create')}} "> agregar medico</a>            
-           --}}
-           <form action="{{route('resultados.store')}}" method="post">
-           @csrf
-            <label for="">numero de orden</label>
-           <input type="text" id="id_orden" value=""   >
-           <label for="">numero servicio</label>
-           <input type="text" id="id_service" value=""  >
-          
-           <input type="submit" value="guarda">
-        </form>
+
         </div>
             <div class="card-body">  
                 <table id ="resultado"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>N`orden</th>
-                            <th>Servicio</th>
-                            <th>examen</th>            
                             <th>#</th>
+                            <th>Servicio</th>
+                            <th>Paciente</th>            
+                            <th>Fecha Solicitud  </th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     
                     <tbody>
                         @foreach ($detalleservicios as $detalleservicio)
                             <tr>
-                                    <td>{{$detalleservicio->or_lab_id}}</td>
-                                    <td>{{servicio($detalleservicio->ser_id)->nombre }}</td>
-                                    <td>{{examen($detalleservicio->exa_id)->nombre}}</td>
+                                <td> {{$detalleservicio->id}}</td>
+                                <td>{{servicio($detalleservicio->servicio_id)->nombre}}</td>
+                                <td> {{paciente(orden_laboratorio($detalleservicio->orden_laboratorio_id)->paciente_id)->nombre}}
+                                    {{paciente(orden_laboratorio($detalleservicio->orden_laboratorio_id)->paciente_id)->paterno}}
+                                    <br>
+                                     {{paciente(orden_laboratorio($detalleservicio->orden_laboratorio_id)->paciente_id)->materno}}
+                                </td>
+                              
+                                <td> {{orden_laboratorio($detalleservicio->orden_laboratorio_id)->fecha}}</td>
+                               
+                                <td>
+                                    <a class="btn-secondary btn-sm" href="{{ route('ordenservicios.show',$detalleservicio) }}">info</a>
+                                </td>
+                                {{--}} <td>{{examen($detalleservicio->exa_id)->nombre}}</td>
                                    <td>
                                         <a class ="btn btn-primary btn-sm"href="  {{route('resultados.edit',$detalleservicio->or_lab_id)}}   ">Colocar Resultado</a>
-                                    </td>   
-                        {{--}} 
-                                    <td >
-                                        <form action="{{route('medicos.destroy',$medico)}}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
-                                        </form>
-                                    </td>
-                                    --}}                
+                                    </td>     --}}
+                                  
                             </tr>  
                         @endforeach
                     </tbody>
