@@ -5,49 +5,33 @@
 
 
 @section('content')
-<div class="card">
-    
-    <div class="row">
-        <div class="col">
-            <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="200" class="" alt="">
-        </div> 
-        <div class="col text-center">
-                <h3>Resultados </h3>
-            <br>
-                <h3> De los Analisis </h3>
-            
-        </div>
-        <div class="col">
-            <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
-        </div>
-</div>
-
-    <div class="card-body">
-                                
-            <div class="card-body">  
-                
+<div class="card" height="700">
+      <div class="card-header">
             <div class="row">
-                <label for="">Edicion de Resultados</label>
+                    <div class="col">
+                        <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="200" class="" alt="">
+                    </div> 
+                    <div class="col text-center">
+                            <h3>Resultados </h3>
+                        <br>
+                            <h3> De los Analisis </h3>
+                        
+                    </div>
+                    <div class="col">
+                        <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
+                    </div>
             </div>
- 
-         @foreach ($detalleservicios as $detalleservicio)
+      </div>
+      <div class="card-body">
+        <div class="row">
+            <label for="">Edicion de Resultados</label>
+        </div>
+
+
+        @foreach ($detalleservicios as $detalleservicio)
            
             {{$idservices=$detalleservicio->servicio_id}}             
-                {{--  
-            @foreach ($services as $service)
-               
-            
-            @if ($idservices==$services->id)
-            {{$service->nombre}}
-            @endif
-
-            @endforeach
- --}}
-
-
-                   
-                        
-            @foreach ($services as $service)
+        @foreach ($services as $service)
              
         @if ($idservices==$service['id'])
         <div class="row">
@@ -90,7 +74,12 @@
             </div>
             
             @endforeach 
-        
-</div>
+      
+
+      </div>
+</div>  
+   
+           
+ 
 
 @stop 

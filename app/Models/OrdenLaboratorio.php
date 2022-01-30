@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrdenLaboratorio extends Model
 {protected $guarded = ['id'];
+    protected $fillable =[
+        'fecha','paciente_id'
+      
+    ];
+    
     use HasFactory;
     public function establecimiento()
     {

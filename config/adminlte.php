@@ -296,8 +296,8 @@ return [
 
         ['header' => 'CONFIGURACION DE CUENTA'],
         [
-            'text' => 'Perfil',
-            'url'  => 'admin/settings',
+            'text' => 'Orden-Servicios',
+            'url'  => 'resultados',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

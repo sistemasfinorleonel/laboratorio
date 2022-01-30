@@ -49,7 +49,7 @@ class OrdenLaboratorioController extends Controller
      */
     public function create()
     {
-        //
+       return view('orden-laboratorios.index');
     }
 
     /**
@@ -59,7 +59,7 @@ class OrdenLaboratorioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {// return $request;  
        
        $ser_id=$request->select_process; 
         $nuevo=new OrdenLaboratorio;
@@ -68,6 +68,7 @@ class OrdenLaboratorioController extends Controller
         $nuevo['establecimiento_id']=$request->establecimiento_id;
         $nuevo['total']=0;
         $nuevo['medico_id']=$request->medico_id;
+        $nuevo->save();
 
         $fec=Date($request->fecha_solicitud);
         $pac_id=$request->paciente_id;
@@ -76,13 +77,13 @@ class OrdenLaboratorioController extends Controller
         $med_id=$request->medico_id;
         $servicioEspera=$request->select_process;
       
-        OrdenLaboratorio::create ([
+        /* OrdenLaboratorio::create ([
             'fecha'=>"$fec",
             'paciente_id'=>"$pac_id",
             'establecimiento_id'=>"$est_id",
             'total'=>"$tot",
             'medico_id'=>"$med_id",
-        ]);
+        ]); */
     // $analisis=$request->analisis;
         $detalles =Examen::detalle($this->ser_id)->get('id');
             //  $cont=Examen::withCount(1,'servicio_id')->get(); 

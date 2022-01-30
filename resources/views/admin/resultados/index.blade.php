@@ -26,8 +26,8 @@
                     <thead>
                         <tr>
                         
-                            <th>orden_laboratorio_id</th>
-                            <th>servicio_id</th>
+                            <th>N`orden</th>
+                            <th>Servicio</th>
                             <th>examen</th>            
                             <th>#</th>
                         </tr>
@@ -37,10 +37,8 @@
                         @foreach ($detalleservicios as $detalleservicio)
                             <tr>
                                     <td>{{$detalleservicio->or_lab_id}}</td>
-                                    <td>{{$detalleservicio->ser_id}}</td>
-                                    <td>{{$detalleservicio->exa_id}}</td>
-                                    
-                                    
+                                    <td>{{servicio($detalleservicio->ser_id)->nombre }}</td>
+                                    <td>{{examen($detalleservicio->exa_id)->nombre}}</td>
                                    <td>
                                         <a class ="btn btn-primary btn-sm"href="  {{route('resultados.edit',$detalleservicio->or_lab_id)}}   ">Colocar Resultado</a>
                                     </td>   
