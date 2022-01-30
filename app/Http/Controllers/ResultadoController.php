@@ -65,9 +65,9 @@ class ResultadoController extends Controller
      * @param  \App\Models\Resultado  $resultado
      * @return \Illuminate\Http\Response
      */
-    public function edit()
-    { 
-        $detalleservicios=DetalleServicio::where('orden_laboratorio_id', 2)->get('servicio_id');
+    public function edit(DetalleServicio $detalle)
+    {
+        $detalleservicios=DetalleServicio::where('orden_laboratorio_id', 3)->get('servicio_id');
       // $idservice= $detalleservicios->servicio_id;
       // return $leonel;
       $services=Servicio::all(); 

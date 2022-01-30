@@ -6,6 +6,22 @@
 
 @section('content')
 <div class="card">
+    
+    <div class="row">
+        <div class="col">
+            <img src="http://creadictivo.com/wp-content/uploads/2018/05/Escudo-de-Bolivia-Nuevo.jpg" width="200" class="" alt="">
+        </div> 
+        <div class="col text-center">
+                <h3>Resultados </h3>
+            <br>
+                <h3> De los Analisis </h3>
+            
+        </div>
+        <div class="col">
+            <img src="https://es.news-front.info/wp-content/uploads/2019/03/Bolivia-salud-SUS.jpg" width="200" class="" alt="">
+        </div>
+</div>
+
     <div class="card-body">
                                 
             <div class="card-body">  
