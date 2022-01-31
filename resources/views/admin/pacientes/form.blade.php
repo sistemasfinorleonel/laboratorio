@@ -1,6 +1,6 @@
 <div class="form-group">
-    {!! Form::label('Carnet','Carnet') !!}
-    {!! Form::text('Carnet',null , ['class'=>'form-control','placeholder'=>'Ingrese su numero de carnet']) !!}
+    {!! Form::label('ci','Carnet') !!}
+    {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'Ingrese su numero de ci']) !!}
 
 </div>
 <div class="form-group">
