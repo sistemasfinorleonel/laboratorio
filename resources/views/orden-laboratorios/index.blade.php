@@ -5,5 +5,5 @@
 @stop
 @section('content')
 
-     @livewire('orden.index')
+     @livewire('orden-laboratoriio.index')
  @stop

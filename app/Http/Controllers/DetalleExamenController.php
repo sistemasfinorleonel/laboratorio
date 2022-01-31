@@ -46,7 +46,7 @@ class DetalleExamenController extends Controller
      */
     public function show(DetalleExamen $detalleExamen)
     {
-        //
+        return $detalleExamen;
     }
 
     /**

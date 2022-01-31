@@ -15,7 +15,12 @@ use App\Models\Red;
 use App\Models\Referencia;
 use App\Models\Resultado;
 use App\Models\Servicio;
+use App\Models\User;
 
+function user($id)
+{
+    return User::findorFail($id);
+}
 function departamento($id){
     return Departamento::findOrFail($id);
 }
@@ -81,6 +86,12 @@ function provicias_idDpt($id){
 
 function establecimiento_idProv($id){
     return Establecimiento::where('establecimiento_id','=',$id)->get();
+}
+
+
+function orden_laboratorios()
+{
+    return OrdenLaboratorio::all(); 
 }
 
 ?>

@@ -36,7 +36,7 @@
                                 <td> {{orden_laboratorio($detalleservicio->orden_laboratorio_id)->fecha}}</td>
                                
                                 <td>
-                                    <a class="btn-secondary btn-sm" href="{{ route('detalleexamens.show',$detalleservicio->id) }}">info</a>
+                                    <a class="btn-secondary btn-sm" href="{{ route('ordenservicios.show',$detalleservicio->id) }}">info</a>
                                 </td>
                                 
                                 <td >

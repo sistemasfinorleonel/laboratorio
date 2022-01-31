@@ -28,18 +28,7 @@ class OrdenLaboratorioController extends Controller
     public $ser_id=1;
     public $c=0;
     public function index()
-    {  $reds = Red::all();
-       $carbon = new \Carbon\Carbon();
-       $mytime =$carbon->now(); 
-       $mytime->format('Y-m-d');
-        $mytime->toDateTimeString();
-        $municipios=Municipio::all();
-        $establecimientos = Establecimiento::all();
-        $servicios=Servicio::all();
-        $medicos=Medico::all();
-       $pacientes=Paciente::all();
-
-        return view('admin.ordens.orden',compact('pacientes','medicos','servicios','mytime','municipios','establecimientos','reds'));
+    {   return view('orden-laboratorios.index');
     }
 
     /**
@@ -48,8 +37,19 @@ class OrdenLaboratorioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-       return view('orden-laboratorios.index');
+    {$reds = Red::all();
+        $carbon = new \Carbon\Carbon();
+        $mytime =$carbon->now(); 
+        $mytime->format('Y-m-d');
+         $mytime->toDateTimeString();
+         $municipios=Municipio::all();
+         $establecimientos = Establecimiento::all();
+         $servicios=Servicio::all();
+         $medicos=Medico::all();
+        $pacientes=Paciente::all();
+ 
+         return view('admin.ordens.orden',compact('pacientes','medicos','servicios','mytime','municipios','establecimientos','reds'));
+     
     }
 
     /**
@@ -105,9 +105,13 @@ class OrdenLaboratorioController extends Controller
      * @param  \App\Models\OrdenLaboratorio  $ordenLaboratorio
      * @return \Illuminate\Http\Response
      */
-    public function show(OrdenLaboratorio $ordenLaboratorio)
-    {
-        //
+    public function show( $id)
+    {//return $id;
+        //return DetalleServicio::all();
+        $detalleservicios=DetalleServicio::where('orden_laboratorio_id','=',$id)->get();
+
+        return view('admin.resultados.index',compact('detalleservicios'));
+        
     }
 
     /**
@@ -118,7 +122,7 @@ class OrdenLaboratorioController extends Controller
      */
     public function edit(OrdenLaboratorio $ordenLaboratorio)
     {
-        //
+        return $ordenLaboratorio;
     }
 
     /**
