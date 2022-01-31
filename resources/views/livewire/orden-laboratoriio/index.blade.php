@@ -28,6 +28,7 @@ placeholder="Escriba un nombre .." type="date"></div>
                          <th>Email</th>
                          <th>Medico</th>
                          <th>Fecha</th>
+                         <th>Id Orden</th>
                          <th></th>
                          <th>Action</th>
                      </tr>
@@ -49,8 +50,12 @@ placeholder="Escriba un nombre .." type="date"></div>
                              <td>{{$orden->id}}</td>
                              
                             <td width="10px">
-                                    <a class="btn-primary" href="{{ route('pdforden.mostrar',['servicio'=>$orden]) }}">imprimir</a>
-                                    <a class="btn-primary" href="{{ route('ordens.show',$orden->id) }}">Masinfo</a>
+                                    <a class="btn btn-success" href="{{ route('pdforden.mostrar',['servicio'=>$orden]) }}">Imprimir</a>
+                              
+                            </td>
+
+                            <td>      
+                                <a class="btn btn-primary" href="{{ route('ordens.show',$orden->id) }}">Mas info</a>
                             </td>
                          </tr>
                      @endforeach

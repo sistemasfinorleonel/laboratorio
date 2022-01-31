@@ -39,14 +39,14 @@ $pcolor = "";
                                     <td>{{$servicio->financiamiento}}</td>
                                    <td>{{$servicio->Tipo}}</td>    
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('servicios.edit',$servicio)}}">Editar</a>
+                                        <a class ="btn btn-primary "href="{{route('servicios.edit',$servicio)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('servicios.destroy',$servicio)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                        <button class="btn btn-danger " type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    

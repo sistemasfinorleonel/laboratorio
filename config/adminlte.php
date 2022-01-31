@@ -276,21 +276,21 @@ return [
         [
             'text'        => 'Examenes',
             'url'         => 'admin/examens',
-          //  'icon'        => 'fas fa-clinic-medical',
+            'icon'        => 'fas fa-diagnoses',
            
         ],
 
         [
             'text'        => 'Servicios',
             'url'         => 'admin/servicios',
-            //'icon'        => 'fas fa-clinic-medical',
+            'icon'        => 'fas fa-list-ul',
            
         ],
 
         [
             'text'        => 'OrdenLaboratorio',
             'url'         => 'admin/ordens',
-          //  'icon'        => 'fas fa-clinic-medical',
+          'icon'        => 'fas fa-vial',
            
         ],
 
