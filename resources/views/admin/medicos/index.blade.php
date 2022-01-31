@@ -11,22 +11,22 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('medicos.create')}}"> agregar medico</a>            
+               <a class ="btn btn-primary"href="{{route('medicos.create')}}"> Registrar nuevo medico</a>            
             </div>
             <div class="card-body">  
                 <table id ="medico"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>ci</th>
-                            <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>            
-                            <th>fechaNacimiento</th>         
-                           <th>sexo</th>     
-                            <th>direccion</th>   
-                            <th>usuario</th>   
+                            <th>Id</th>
+                            <th>Carnet</th>
+                            <th>Nombre</th>            
+                            <th>Apellido paterno</th>            
+                            <th>Apellido materno</th>            
+                            <th>Fecha de nacimiento</th>         
+                           <th>Sexo</th>     
+                            <th>Direccion</th>   
+                            <th>Usuario</th>   
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -46,14 +46,14 @@ $pcolor = "";
                                     <td>{{$medico->user->name}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('medicos.edit',$medico)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('medicos.edit',$medico)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('medicos.destroy',$medico)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    
@@ -63,7 +63,7 @@ $pcolor = "";
                 </table>
             </div>
 </div>
-<button id="btn1">clon</button>
+
 
 
 

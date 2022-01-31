@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>CREAR</h1>
+    <h1>Registro de nuevo paciente</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
         {!! Form::open(['route' => 'pacientes.store']) !!}
          @include('admin.pacientes.form')
             
-           {!! Form::submit('crear tipo de prendas', ['class'=>'btn btn-primary'])  !!}
+           {!! Form::submit('Guardar datos', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     </div>
 </div> 

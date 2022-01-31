@@ -12,7 +12,7 @@
         
         @include('admin.laboratoristas.form')
         
-            {!! Form::submit('actualizar tipo de laboratoristas', ['class'=>'btn btn-primary'])  !!}
+            {!! Form::submit('Actualizar personal de laboratorio', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     
         

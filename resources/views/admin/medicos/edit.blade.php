@@ -12,7 +12,7 @@
         
         @include('admin.medicos.form')
         
-            {!! Form::submit('actualizar tipo de medicos', ['class'=>'btn btn-primary'])  !!}
+            {!! Form::submit('Actualizar datos del medico', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     
         

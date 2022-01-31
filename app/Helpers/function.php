@@ -94,4 +94,7 @@ function orden_laboratorios()
     return OrdenLaboratorio::all(); 
 }
 
+function establecimiento_idRed($id){
+    return Red::where('red_id','=',$id)->get();
+}
 ?>
