@@ -54,9 +54,9 @@ class ResultadoController extends Controller
      * @param  \App\Models\Resultado  $resultado
      * @return \Illuminate\Http\Response
      */
-    public function show(DetalleServicio $detalle)
-    {
-    return $detalle;
+    public function show( $id)
+    {   $detalleexamens=DetalleExamen::where('oservicio_id','=',$id)->get();
+        return view('detalleexamens.index',compact('detalleexamens'));
     }
 
     /**
