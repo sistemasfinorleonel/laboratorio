@@ -56,8 +56,8 @@ class DetalleExamenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(DetalleExamen $detalleExamen)
-    {
-        //
+    { $detalleexamen =$detalleExamen;
+        return view('detalleexamens.edit',compact('detalleexamen'));
     }
 
     /**
@@ -68,8 +68,12 @@ class DetalleExamenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, DetalleExamen $detalleExamen)
-    {
-        //
+    { 
+
+        $detalleExamen['resultado']=$request->resultado;
+        $detalleExamen->update();
+       // return $detalleExamen;
+        return redirect()->route('ordenservicios.show',$detalleExamen->oservicio_id);
     }
 
     /**
