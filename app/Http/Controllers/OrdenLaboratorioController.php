@@ -45,7 +45,7 @@ class OrdenLaboratorioController extends Controller
         $mytime->format('Y-m-d');
          $mytime->toDateTimeString();
          $municipios=Municipio::all();
-         $establecimientos = Establecimiento::all();
+         $establecimientos = Establecimiento::where('municipio_id','=','55')->get();
          $servicios=Servicio::all();
          $medicos=Medico::all();
         $pacientes=Paciente::all();

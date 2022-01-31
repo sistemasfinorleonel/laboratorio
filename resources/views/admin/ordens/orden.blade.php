@@ -32,7 +32,7 @@
         <div class="form-group ">
             <div class="row mb-3">
 
-                <div class="col">
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">
                     <span class="input-group-text">Red</span>
                     <select name="red_id" id="red_id"  class="form-control">
@@ -41,9 +41,9 @@
                         @endforeach
                     </select>  
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="col">
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">
                         <span class="input-group-text">Municipio</span>
                         <select name="municipio_id" id="municipio_id" class="form-control">
@@ -52,7 +52,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div> --}}
                 
             </div> 
             
@@ -72,32 +72,32 @@
                 <div class="col">
                     <div class="input-group input-group-lg">
                         <span class="input-group-text">Fecha de solicitud</span>
-                       {{--  <input type="date" name="fecha_solicitud" id="fecha_solicitud" class="form" value="{{$mytime}}">
-                        --}} <input type="date" name="fecha_solicitud" id="fecha_solicitud"  class="form-control">
+                       <input type="text" name="fecha_solicitud" id="fecha_solicitud" class="form-control" value="{{$mytime}}">
+                        {{-- <input type="text" name="fecha_solicitud" id="fecha_solicitud"  class="form-control" value> --}}
                     </div> 
                 </div> 
             </div>
 
-            <div class="row mb-3">
+            {{-- <div class="row mb-3">
                 <div class="col">
                     <div class="input-group input-group-lg">
                         <span class="input-group-text">Nro Registro</span>
                         <input type="text" name="numero_registro" id="numero_registro" class="form-control"size="40">
                     </div> 
                 </div>
-            
-                <div class="col">
+             --}}
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">
                         <span class="input-group-text">Edad</span>
                         <input type="text" name="edad" id="edad" class="form-control"size="12">
                     </div> 
-                </div>
-                <div class="col">
+                </div> --}}
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">
                         <span class="input-group-text">Sexo</span>
                         <input type="text" name="sexo" id="sexo" class="form-control"size="12">
                     </div> 
-                </div>
+                </div> --}}
             </div> 
             <div class="row mb-3">
                 <div class="col">
@@ -105,26 +105,26 @@
                         <span class="input-group-text">Paciente</span>
                         <select name="paciente_id" id="paciente_id" class="form-control">
                         @foreach ($pacientes as $paciente)
-                            <option value="{{$paciente->id}}">{{$paciente->nombre}}  {{$paciente->paterno}} {{$paciente->nombre}}  {{$paciente->paterno}}</option>
+                            <option value=" {{$paciente->id}}"> Carnet: {{$paciente->ci}}, Nombre:{{$paciente->nombre}} {{$paciente->paterno}} {{$paciente->materno}},  Edad: {{$paciente->edad}}, Sexo: {{$paciente->sexo}} </option>
                             @endforeach
                         </select>
                     </div> 
                 </div>
 
-                <div class="col">
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">                
                         <span class="input-group-text">Celula Identidad</span>
                         <input type="text" name="ci" id="ci" class="form-control"size="40">
                     </div> 
-                </div>
+                </div> --}}
             </div>
             <div class="row mb-3">
-                <div class="col">
+                {{-- <div class="col">
                     <div class="input-group input-group-lg">                   
                         <span class="input-group-text">medico_id clinico</span>
                         <input type="text" name="diagnostico" id="diagnostico" class="form-control">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col">
                     <div class="input-group input-group-lg">                   

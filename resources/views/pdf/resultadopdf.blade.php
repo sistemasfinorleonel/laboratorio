@@ -110,18 +110,16 @@
                 </p>     
             </div>
             <p id="centro">    
-               {{--  {{departamento(provincia(municipio(establecimiento($orden->establecimiento_id)->municipio_id))->departamento_id)->nombre}}
-                --}}
+          
                 Departamento {{departamento(provincia(municipio(establecimiento($orden->establecimiento_id)->municipio_id)->provincia_id)->departamento_id)->nombre}}
                 <br>
-                provincia  {{provincia(municipio(establecimiento($orden->establecimiento_id)->municipio_id)->provincia_id)->nombre
-                
-                }}
-          <br>  
-             munucipio   {{municipio(establecimiento($orden->establecimiento_id)->municipio_id)->nombre}}
-           <br> establecimiento   {{establecimiento($orden->establecimiento_id)->nombre}}
+                Provincia  {{provincia(municipio(establecimiento($orden->establecimiento_id)->municipio_id)->provincia_id)->nombre}}
+                <br>  
+                Municipio   {{municipio(establecimiento($orden->establecimiento_id)->municipio_id)->nombre}}
+                <br> 
+                Establecimiento   {{establecimiento($orden->establecimiento_id)->nombre}}
         
-        </p>
+            </p>
           
             <div id="datos">
             <p id="encabezadoderecho">
