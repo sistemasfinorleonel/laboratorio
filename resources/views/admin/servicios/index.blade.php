@@ -56,7 +56,7 @@ $pcolor = "";
                 </table>
             </div>
 </div>
-<button id="btn1">clon</button>
+
 
 
 

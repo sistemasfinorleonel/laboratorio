@@ -14,7 +14,7 @@ class EstablecimientoController extends Controller
     
     public function index()
     {   
-        $establecimientos = Establecimiento::paginate(15);
+        $establecimientos = Establecimiento::paginate(369);
     return view('admin.establecimientos.index',compact('establecimientos'));
     }
 

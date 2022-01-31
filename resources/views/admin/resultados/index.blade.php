@@ -36,14 +36,14 @@
                                 <td> {{orden_laboratorio($detalleservicio->orden_laboratorio_id)->fecha}}</td>
                                
                                 <td>
-                                    <a class="btn-secondary btn-sm" href="{{ route('ordenservicios.show',$detalleservicio->id) }}">info</a>
+                                    <a class="btn btn-success " href="{{ route('ordenservicios.show',$detalleservicio->id) }}">Información</a>
                                 </td>
                                 
                                 <td >
                                     <form action="{{route('ordenservicios.destroy',$detalleservicio->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                    <button class="btn btn-danger " type="submit">Eliminar</button>
                                     </form>
                                 </td>
                                 {{--}} <td>{{examen($detalleservicio->exa_id)->nombre}}</td>

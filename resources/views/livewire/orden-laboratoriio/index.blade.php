@@ -4,8 +4,8 @@
 
 <h1>Listado de Orden Laboratorio</h1>
 <div>
-    <a href="{{ route('ordens.create') }}"  class="btn btn-primary">Agregar Nuevo Registro</a>
-</div>
+    <a href="{{ route('ordens.create') }}"  class="btn btn-primary">Agregar Nuevo Registro</a> <br>
+</div> <br>
       <div class="row">
     <div class="col-5">
         <span>Fecha de Inicio</span>

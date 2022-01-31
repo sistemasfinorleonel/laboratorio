@@ -33,8 +33,8 @@ $pcolor = "";
                         @foreach ($establecimientos as $establecimiento)
                             <tr>
                                     <td>{{$establecimiento->id}}</td>
-                                    <td>{{$establecimiento->nombre}}</td>
-                                    <td>{{$establecimiento->red_id}}</td>
+                                    <td>{{municipio($establecimiento->municipio_id)->nombre}}</td>
+                                    <td>{{red($establecimiento->red_id)->nombre}}</td>
                                     <td>{{$establecimiento->nombre}}</td>
                                     <td>{{$establecimiento->esta_area}}</td>
                                     <td>{{$establecimiento->nivel}}</td>
