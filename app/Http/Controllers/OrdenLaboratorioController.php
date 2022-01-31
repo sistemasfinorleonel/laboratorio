@@ -98,6 +98,7 @@ class OrdenLaboratorioController extends Controller
                     }
         
            }
+           return redirect()->route('ordens.index');
     }
     
 
