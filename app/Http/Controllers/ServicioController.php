@@ -59,7 +59,9 @@ class ServicioController extends Controller
      */
     public function edit(Servicio $servicio)
     {
-        //
+        // $servicios=Servicio::all();
+        
+        // return view('admin.servicios.edit',compact('servicios')); 
     }
 
     /**
@@ -82,6 +84,7 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
-        //
+        $servicio->delete();
+        return redirect()->route('servicios.index');
     }
 }

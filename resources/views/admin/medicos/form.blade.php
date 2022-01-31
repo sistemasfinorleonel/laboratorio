@@ -1,40 +1,40 @@
 <div class="form-group">
-    {!! Form::label('ci','ci') !!}
-    {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('ci','Carnet') !!}
+    {!! Form::text('ci',null , ['class'=>'form-control','placeholder'=>'Ingrese su numero de carnet']) !!}
 
 </div>
 <div class="form-group">
-    {!! Form::label('nombre','nombre') !!}
-    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('nombre','Nombre') !!}
+    {!! Form::text('nombre',null , ['class'=>'form-control','placeholder'=>'Ingrese nombre del medico']) !!}
 
     @error('nombre')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('paterno','paterno') !!}
-    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('paterno','Apellido paterno') !!}
+    {!! Form::text('paterno',null , ['class'=>'form-control','placeholder'=>'Ingrese apellido paterno']) !!}
 @error('paterno')
 <span class="text-danger">{{$message}}</span>
 @enderror
 <div class="form-group">
-    {!! Form::label('materno','materno') !!}
-    {!! Form::text('materno',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('materno','Apellido materno') !!}
+    {!! Form::text('materno',null , ['class'=>'form-control','placeholder'=>'Ingrese apellido materno']) !!}
 @error('materno')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 
 <div class="form-group">
-    {!! Form::label('telefono','telefono') !!}
-    {!! Form::number('telefono',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('telefono','Telefono') !!}
+    {!! Form::number('telefono',null , ['class'=>'form-control','placeholder'=>'Ingrese numero de telefono']) !!}
 @error('telefono')
 <span class="text-danger">{{$message}}</span>
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('fecha_nacimiento','fecha_nacimiento') !!}
-    {!! Form::date('fecha_nacimiento',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('fecha_nacimiento','Fecha de nacimiento') !!}
+    {!! Form::date('fecha_nacimiento',null , ['class'=>'form-control','placeholder'=>'Ingrese fecha de nacimiento']) !!}
 @error('fecha_nacimiento')
 <span class="text-danger">{{$message}}</span>
 @enderror
@@ -42,7 +42,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('sexo','sexo') !!}
+    {!! Form::label('sexo','Sexo') !!}
     <select name="sexo" id="sexo">
         
             <option value="Masculino">masculino</option>
@@ -54,8 +54,8 @@
 @enderror
 </div>
 <div class="form-group">
-    {!! Form::label('direccion','direccion') !!}
-    {!! Form::text('direccion',null , ['class'=>'form-control','placeholder'=>'ingrese  el tipo de prenda']) !!}
+    {!! Form::label('direccion','Direccion') !!}
+    {!! Form::text('direccion',null , ['class'=>'form-control','placeholder'=>'Ingrese direccion']) !!}
 @error('direccion')
 <span class="text-danger">{{$message}}</span>
 @enderror
@@ -64,7 +64,7 @@
 
 </div>
 <div class="form-group">
-    {!! Form::label('user_id',' user_id') !!}
+    {!! Form::label('user_id',' Usuario') !!}
     <select name="user_id" id="user_id">
         <option value="{{isset($paciente->user->email)?$paciente->user->email:""}}">{{isset($paciente->user->email)?$paciente->user->email:""}}</option>
      

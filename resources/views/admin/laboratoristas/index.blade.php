@@ -10,23 +10,23 @@
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('laboratoristas.create')}}"> agregar laboratorista</a>            
+               <a class ="btn btn-primary"href="{{route('laboratoristas.create')}}"> Registrar personal de laboratorio</a>            
             </div>
             <div class="card-body">  
                 <table id ="laboratorista"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>ci</th>
-                            <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>            
-                            <th>fechaNacimiento</th>         
-                            <th>edad</th>
-                            <th>sexo</th>     
-                            <th>direccion</th>   
-                            <th>usuario</th>   
+                            <th>Id</th>
+                            <th>Carnet</th>
+                            <th>Nombre</th>            
+                            <th>Paterno</th>            
+                            <th>Materno</th>            
+                            <th>Fecha de Nacimiento</th>         
+                  
+                            <th>Sexo</th>     
+                            <th>Direccion</th>   
+                            <th>Usuario</th>   
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -41,19 +41,20 @@
                                     <td>{{$laboratorista->paterno}}</td>
                                     <td>{{$laboratorista->materno}}</td>
                                     <td>{{$laboratorista->fecha_nacimiento}}</td>
+                  
                                     <td>{{$laboratorista->sexo}}</td>
                                     <td>{{$laboratorista->direccion}}</td>
                                     <td>{{$laboratorista->user->name}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('laboratoristas.edit',$laboratorista)}}">editar</a>
+                                        <a class ="btn btn-primary "href="{{route('laboratoristas.edit',$laboratorista)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('laboratoristas.destroy',$laboratorista)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger " type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    

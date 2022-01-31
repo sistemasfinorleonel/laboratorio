@@ -83,4 +83,7 @@ function establecimiento_idProv($id){
     return Establecimiento::where('establecimiento_id','=',$id)->get();
 }
 
+function establecimiento_idRed($id){
+    return Red::where('red_id','=',$id)->get();
+}
 ?>

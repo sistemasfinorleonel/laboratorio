@@ -10,6 +10,7 @@ use League\CommonMark\Reference\Reference;
 
 class ExamenController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -102,6 +103,7 @@ class ExamenController extends Controller
      */
     public function destroy(Examen $examen)
     {
-        //
+        $examen->delete();
+        return redirect()->route('examens.index');
     }
 }

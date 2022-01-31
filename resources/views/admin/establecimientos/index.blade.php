@@ -18,12 +18,12 @@ $pcolor = "";
                         <tr>
                         
                             <th>id</th>
-                            <th>municipio_id</th>
-                            <th>red_id</th>            
-                            <th>nombre</th>            
-                            <th>esta_area</th>            
-                            <th>nivel</th>         
-                            <th>tipo</th>
+                            <th>Municipio</th>
+                            <th>Red de salud</th>            
+                            <th>Nombre</th>            
+                            <th>Area</th>            
+                            <th>Nivel</th>         
+                            <th>Tipo</th>
                             <th ></th>
                             <th ></th>
                         </tr>
@@ -33,7 +33,7 @@ $pcolor = "";
                         @foreach ($establecimientos as $establecimiento)
                             <tr>
                                     <td>{{$establecimiento->id}}</td>
-                                    <td>{{$establecimiento->municipio_id}}</td>
+                                    <td>{{$establecimiento->nombre}}</td>
                                     <td>{{$establecimiento->red_id}}</td>
                                     <td>{{$establecimiento->nombre}}</td>
                                     <td>{{$establecimiento->esta_area}}</td>
@@ -41,14 +41,14 @@ $pcolor = "";
                                     <td>{{$establecimiento->tipo}}</td>
                                                                        
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('establecimientos.edit',$establecimiento)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('establecimientos.edit',$establecimiento)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('establecimientos.destroy',$establecimiento)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    
@@ -58,7 +58,7 @@ $pcolor = "";
                 </table>
             </div>
 </div>
-<button id="btn1">clon</button>
+
 
 
 

@@ -30,3 +30,4 @@ Route::resource('detalle-examens',DetalleExamenController::class)->names('detall
 //Route::get('ordens',[ OrdenLaboratorioController::class,'index'])->name('ordens');
 
 //Route::get('establecimientos',[ EstablecimientoController::class,'index'])->name('establecimientos');
+

@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>CREAR ESTABLECIMIENTO</h1>
+    <h1>Registrar nuevo establecimiento</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
         {!! Form::open(['route' => 'establecimientos.store']) !!}
          @include('admin.establecimientos.form')
             
-           {!! Form::submit('crear Establecimientos', ['class'=>'btn btn-primary'])  !!}
+           {!! Form::submit('Crear Establecimientos', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     </div>
 </div> 

@@ -10,23 +10,23 @@
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('examens.create')}}"> agregar examen</a>            
+               <a class ="btn btn-primary"href="{{route('examens.create')}}"> Agregar examen</a>            
             </div>
             <div class="card-body">  
                 <table id ="examen"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
+                            <th>Id</th>
                          
-                            <th>nombre</th>            
-                            <th>edad ini</th>            
-                            <th>edad fin</th>            
-                            <th>sexo</th>         
-                            <th>unidad medida</th>
-                            <th>rango ini</th>     
-                            <th>rango fin</th>   
-                            <th >nombre servicio</th>
+                            <th>Nombre del examen</th>            
+                            <th>Edad inicial</th>            
+                            <th>Edad final</th>            
+                            <th>Sexo</th>         
+                            <th>Unidad medida</th>
+                            <th>Rango inicial</th>     
+                            <th>Rango final</th>   
+                            <th >Nombre del servicio</th>
                             <th >Tipo</th>
                             <th ></th>
                             <th ></th>
@@ -47,14 +47,14 @@
                                     <td>{{$examen->servicio->nombre}}</td>
                                     <td>{{$examen->servicio->Tipo}}</td>
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('examens.edit',$examen)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('examens.edit',$examen)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('examens.destroy',$examen)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    
@@ -64,7 +64,7 @@
                 </table>
             </div>
 </div>
-<button id="btn1">clon</button>
+
 
 
 

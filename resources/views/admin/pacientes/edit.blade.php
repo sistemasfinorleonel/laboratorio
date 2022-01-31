@@ -12,7 +12,7 @@
         
         @include('admin.pacientes.form')
         
-            {!! Form::submit('actualizar tipo de pacientes', ['class'=>'btn btn-primary'])  !!}
+            {!! Form::submit('Actualizar datos del paciente', ['class'=>'btn btn-primary'])  !!}
         {!! Form::close() !!}
     
         

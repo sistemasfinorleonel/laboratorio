@@ -11,25 +11,26 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('pacientes.create')}}"> agregar paciente</a>            
+               <a class ="btn btn-primary"href="{{route('pacientes.create')}}"> Agregar paciente</a>            
             </div>
-            <div class="card-body">  
+            <center>
+            <div class="card-body justify-content: center">  
                 <table id ="paciente"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>ci</th>
-                            <th>nombre</th>            
-                            <th>paterno</th>            
-                            <th>materno</th>            
-                            <th>fechaNacimiento</th>         
-                            <th>edad</th>
-                            <th>sexo</th>     
-                            <th>direccion</th>   
-                            <th>usuario</th>   
-                            <th ></th>
-                            <th ></th>
+                            <th>Id</th>
+                            <th>Carnet</th>
+                            <th>Nombre</th>            
+                            <th>Paterno</th>            
+                            <th>Materno</th>            
+                            <th>Fecha Nacimiento</th>         
+                            <th>Edad</th>
+                            <th>Sexo</th>     
+                            <th>Direccion</th>   
+                            <th>Usuario</th>
+                            <th>Acción</th>   
+                            
                         </tr>
                     </thead>
                     
@@ -48,14 +49,14 @@ $pcolor = "";
                                     <td>{{$paciente->user->name}}</td>
                                     
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('pacientes.edit',$paciente)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('pacientes.edit',$paciente)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('pacientes.destroy',$paciente)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    
@@ -64,6 +65,8 @@ $pcolor = "";
                     </tbody>
                 </table>
             </div>
+            
+            </center>
 </div>
 {{-- <button id="btn1">clon</button> --}}
 

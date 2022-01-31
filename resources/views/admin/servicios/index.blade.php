@@ -11,18 +11,18 @@ $pcolor = "";
 <div class="card">
     <div class="card-body">
             <div class="card-header">
-               <a class ="btn btn-primary"href="{{route('servicios.create')}}"> agregar servicio</a>            
+               <a class ="btn btn-primary"href="{{route('servicios.create')}}"> Agregar servicio</a>            
             </div>
             <div class="card-body">  
                 <table id ="servicio"class= "table table-striped" style="width:100%"> 
                     <thead>
                         <tr>
                         
-                            <th>id</th>
-                            <th>nombre</th>            
-                            <th>precio</th>            
-                            <th>nivel</th>            
-                            <th>financiamiento</th>         
+                            <th>Id</th>
+                            <th>Nombre del servicio</th>            
+                            <th>Precio</th>            
+                            <th>Nivel</th>            
+                            <th>Financiamiento</th>         
                            <th>Tipo</th>     
                             <th ></th>
                             <th ></th>
@@ -39,14 +39,14 @@ $pcolor = "";
                                     <td>{{$servicio->financiamiento}}</td>
                                    <td>{{$servicio->Tipo}}</td>    
                                     <td>
-                                        <a class ="btn btn-primary btn-sm"href="{{route('servicios.edit',$servicio)}}">editar</a>
+                                        <a class ="btn btn-primary btn-sm"href="{{route('servicios.edit',$servicio)}}">Editar</a>
                                     </td>  
                         
                                     <td >
                                         <form action="{{route('servicios.destroy',$servicio)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                                    
