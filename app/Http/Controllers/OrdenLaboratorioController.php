@@ -16,6 +16,7 @@ use App\Models\Medico;
 use App\Models\Paciente;
 use Carbon\Carbon;
 use DateTime;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 
 class OrdenLaboratorioController extends Controller
@@ -28,7 +29,8 @@ class OrdenLaboratorioController extends Controller
     public $ser_id=1;
     public $c=0;
     public function index()
-    {   return view('orden-laboratorios.index');
+    {  
+       return view('orden-laboratorios.index');
     }
 
     /**
