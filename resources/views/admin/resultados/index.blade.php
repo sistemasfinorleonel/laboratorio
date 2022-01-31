@@ -38,6 +38,14 @@
                                 <td>
                                     <a class="btn-secondary btn-sm" href="{{ route('detalleexamens.show',$detalleservicio->id) }}">info</a>
                                 </td>
+                                
+                                <td >
+                                    <form action="{{route('ordenservicios.destroy',$detalleservicio->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-danger btn-sm" type="submit">ELIMINAR</button>
+                                    </form>
+                                </td>
                                 {{--}} <td>{{examen($detalleservicio->exa_id)->nombre}}</td>
                                    <td>
                                         <a class ="btn btn-primary btn-sm"href="  {{route('resultados.edit',$detalleservicio->or_lab_id)}}   ">Colocar Resultado</a>

@@ -100,8 +100,9 @@ class ResultadoController extends Controller
      * @param  \App\Models\Resultado  $resultado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resultado $resultado)
-    {
-        //
+    public function destroy( $id)
+    { $hola=OrdenLaboratorio::find($id);
+        $hola->delete();
+        return redirect()->route('ordenservicios.index');   
     }
 }
