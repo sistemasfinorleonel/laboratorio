@@ -15,8 +15,8 @@ class PacienteSeeder extends Seeder
     public function run()
     {
     Paciente::Create(['ci'=>'1958162 SCZ','nombre'=>'Pedro','paterno'=>'Veizaga','materno'=>'Cabrera','telefono'=>'71339531','fecha_nacimiento'=>'1946/2/16','edad'=>'75','sexo'=>'Masculino','direccion'=>'B/  10 DE Noviembre','user_id'=>'1']);
-    Paciente::Create(['ci'=>'15440478 SCZ','nombre'=>'Aaron','paterno'=>'Albino','materno'=>'Albino','telefono'=>'71339532','fecha_nacimiento'=>'2012/4/15','edad'=>'9','sexo'=>'Masculino','direccion'=>'B/ 3 de mayo','user_id'=>'1']);
-    Paciente::Create(['ci'=>'15878032 CHQ','nombre'=>'Lucas Gabriel','paterno'=>'Avila','materno'=>'Cita','telefono'=>'71339533','fecha_nacimiento'=>'2019/5/8','edad'=>'2','sexo'=>'Masculino','direccion'=>'calle 11','user_id'=>'1']);
+    Paciente::Create(['ci'=>'15440478 SCZ','nombre'=>'Aaron','paterno'=>'Albino','materno'=>'Albino','telefono'=>'71339532','fecha_nacimiento'=>'2012/4/15','edad'=>'9','sexo'=>'Masculino','direccion'=>'B/ 3 de mayo','user_id'=>'2']);
+    Paciente::Create(['ci'=>'15878032 CHQ','nombre'=>'Lucas Gabriel','paterno'=>'Avila','materno'=>'Cita','telefono'=>'71339533','fecha_nacimiento'=>'2019/5/8','edad'=>'2','sexo'=>'Masculino','direccion'=>'calle 11','user_id'=>'3']);
 
 
 
