@@ -55,8 +55,9 @@ class ResultadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show( $id)
-    {   $detalleexamens=DetalleExamen::where('oservicio_id','=',$id)->get();
-        return view('detalleexamens.index',compact('detalleexamens'));
+    {  $iddetalle_servicio=$id;
+         $detalleexamens=DetalleExamen::where('oservicio_id','=',$id)->get();
+        return view('detalleexamens.index',compact('detalleexamens','iddetalle_servicio'));
     }
 
     /**

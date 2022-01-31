@@ -3,7 +3,25 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>INFORMACION DEL SERVICIO</h1>
+
+<div class="card">
+    <span><strong>
+        Nombre completo del paciente
+    </strong>
+    </span>
+    <div class="col-13">
+    {{paciente(orden_laboratorio(detalle_servicio($iddetalle_servicio)
+    ->orden_laboratorio_id)->paciente_id)->nombre}}
+    {{paciente(orden_laboratorio(detalle_servicio($iddetalle_servicio)
+        ->orden_laboratorio_id)->paciente_id)->paterno}}
+        {{paciente(orden_laboratorio(detalle_servicio($iddetalle_servicio)
+            ->orden_laboratorio_id)->paciente_id)->materno}}
+</div>
+</div>
+  {{--   {{paciente(detalle_servicio($iddetalle_servicio)->paciente_id)->paterno}}
+    {{paciente(detalle_servicio($iddetalle_servicio)->paciente_id)->materno}}
+
+{{paciente(detalle_servicio($iddetalle_servicio)->paciente_id)->nombre}} --}}
 @stop
 
 @section('content')
@@ -15,8 +33,8 @@
                 <tr>
                 
                     <th>#</th>
-                    <th>PACIENTE</th>
-                    <th>SERVICIO</th>            
+             {{--        <th>PACIENTE</th>
+              --}}       <th>SERVICIO</th>            
                     <th>EXAMEN</th>            
                     <th>REFERENCIA</th>                   
                     <th>RESULTADO</th>
@@ -30,8 +48,8 @@
                     <tr>
                         
                         <td>{{$establecimiento->id}}</td>
-                        <td>{{paciente(orden_laboratorio(detalle_servicio($establecimiento->oservicio_id)->orden_laboratorio_id)->paciente_id)->nombre}}</td>
-                     
+               {{--          <td>{{paciente(orden_laboratorio(detalle_servicio($establecimiento->oservicio_id)->orden_laboratorio_id)->paciente_id)->nombre}}</td>
+                  --}}    
                         <td>{{servicio(detalle_servicio($establecimiento->oservicio_id)->servicio_id)->nombre}}</td>
                         <td>{{examen($establecimiento->exa_id)->nombre}}</td>
                         <td whit="100">{{referencia(examen($establecimiento->exa_id)->referencia_id)->unidad_medida}}
