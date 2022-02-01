@@ -202,17 +202,18 @@
                             
                         </tr>
                     @endforeach
+                    <br>
                     </tbody>
                     <tfoot>
                         <tr>
                             <th></th>
                             
-                            <td class="total">TOTALES : </td>
+                           {{--  <td class="total">TOTALES : </td> --}}
                {{--              <td>{{detallecomprobante($comprobante->idComprobante)['total_debes']}}</td>
                             <td>{{detallecomprobante($comprobante->idComprobante)['total_habers']}}</td>
                             <td>{{montoSus($comprobante->tc,detallecomprobante($comprobante->idComprobante)['total_debes'])}}</td>
                             <td>{{montoSus($comprobante->tc,detallecomprobante($comprobante->idComprobante)['total_habers'])}}</td>
-                  --}}       </tr>
+                  --}}      {{--  </tr> --}}
                     </tfoot>
                 </table>
             </div>

@@ -301,8 +301,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],  ['header' => 'CONFIGURACION DE CUENTA'],
         [
-            'text' => 'Cambiar contraseña',
-            'url'  => 'admin/settings',
+            'text' => 'Perfil',
+            'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
@@ -344,7 +344,7 @@ return [
         //         ],
         //     ],
         // ],
-        ['header' => 'labels'],
+      /*   ['header' => 'labels'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -359,7 +359,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
     ],
 
     /*
