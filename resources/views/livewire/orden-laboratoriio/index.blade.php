@@ -3,9 +3,14 @@
         <div class="card-header">
 
 <h1>Listado de Orden Laboratorio</h1>
+@if(Auth::user()->id==3||Auth::user()->name=='doctor'||Auth::user()->name=='Mari')
+
 <div>
     <a href="{{ route('ordens.create') }}"  class="btn btn-primary">Agregar Nuevo Registro</a> <br>
-</div> <br>
+</div> 
+
+@endif
+<br>
       <div class="row">
     <div class="col-5">
         <span>Fecha de Inicio</span>
@@ -23,13 +28,12 @@ placeholder="Escriba un nombre .." type="date"></div>
              <table class="table table-striped">
                  <thead>
                      <tr>
-                         <th>#</th>
+                         <th>ID Orden</th>
                          <th> Nompre Paciente</th>
                          <th>Email</th>
                          <th>Medico</th>
                          <th>Fecha</th>
-                         <th>Id Orden</th>
-                         <th></th>
+                       {{--   <th>Id Orden</th> --}}
                          <th>Action</th>
                      </tr>
                  </thead>
@@ -47,16 +51,21 @@ placeholder="Escriba un nombre .." type="date"></div>
                   {{--            <td>{{$orden->}}</td>
                              <td>{{$orden->}}</td>
                              <td>{{$orden->}}</td> --}}
-                             <td>{{$orden->id}}</td>
-                             
+                            {{--  <td>{{$orden->id}}</td>
+                             --}} 
                             <td width="10px">
                                     <a class="btn btn-success" href="{{ route('pdforden.mostrar',['servicio'=>$orden]) }}">Imprimir</a>
                               
+                            
+                             @if(Auth::user()->id==3||Auth::user()->name=='doctor'||Auth::user()->name=='Mari')
+
+                                 
+                                <a class="btn btn-primary" href="{{ route('ordens.show',$orden->id) }}">Mas info</a>
+                            
+                             @endif
                             </td>
 
-                            <td>      
-                                <a class="btn btn-primary" href="{{ route('ordens.show',$orden->id) }}">Mas info</a>
-                            </td>
+                           
                          </tr>
                      @endforeach
                  </tbody>

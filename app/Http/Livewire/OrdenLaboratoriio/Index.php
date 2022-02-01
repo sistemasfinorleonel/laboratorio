@@ -22,9 +22,18 @@ class Index extends Component
         ]);}
     
     else{
-        $ordens=OrdenLaboratorio::all();
+        if(Auth::user()->id==3||Auth::user()->name=='doctor'||Auth::user()->name=='Mari')
+       { $ordens=OrdenLaboratorio::all();
         return view('livewire.orden-laboratoriio.index',[
             'ordens'=>$ordens
         ]);}
+        else
+        {$ordens=OrdenLaboratorio::where('paciente_id','=',0)->get();
+            return view('livewire.orden-laboratoriio.index',[
+                'ordens'=>$ordens
+            ]);
+
+        }
+    }
     }
 }
